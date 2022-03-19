@@ -1,19 +1,24 @@
 class Solution {
 
     public void rotate(int[] nums, int k) {
-        k = k % nums.length;   //If k is larger than nums.length 
-        //For ex: if nums.length = 7 and number of rotation we have to do is 8
-//         then in 7th rotation it would be same as without rotaion i.e 8th rotation would be equivalent to 1 rotation therefore k%nums.length
-        int[] tempArr = new int[k];
-        int p = 0;
-        for (int i = nums.length - k; i < nums.length; i++) {
-            tempArr[p++] = nums[i];
+        k = k % nums.length;   
+//      Reversing whole array
+        reverse(nums,0,nums.length-1);
+//      Reversing first k elements
+        reverse(nums,0,k-1);
+//      Reversing rest of the element after k to length   
+        reverse(nums,k,nums.length-1);
+    }
+    
+    public void reverse(int[] nums,int start,int end){
+        
+        while(start<end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
-        for (int i = nums.length - 1; i >= k; i--) {
-            nums[i] = nums[i - k];
-        }
-        for (int i = 0; i < tempArr.length; i++) {
-            nums[i] = tempArr[i];
-        }
+        
     }
 }
