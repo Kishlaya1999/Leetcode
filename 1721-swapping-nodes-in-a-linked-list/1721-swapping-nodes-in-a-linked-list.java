@@ -10,23 +10,29 @@
  */
 class Solution {
     public ListNode swapNodes(ListNode head, int k) {
-        ListNode kBeg = null, ith = head, jth = head ;
         
-        while(--k>0){
-            ith = ith.next;
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        ListNode current = head;
+        
+        while(current != null){
+            ans.add(current.val);
+            current = current.next;
         }
         
-        kBeg = ith;
-        ith = ith.next;
+        int i = k-1;
+        int j = ans.size()-k;
         
-        while(ith != null){
-            ith = ith.next;
-            jth = jth.next;
+        int temp = ans.get(i);
+        ans.set(i,ans.get(j));
+        ans.set(j,temp);
+        
+        current = head;
+        
+        for(int l = 0 ; l < ans.size() ; l++){
+            current.val = ans.get(l);
+            current = current.next;
         }
-        
-        int temp = jth.val;
-        jth.val = kBeg.val;
-        kBeg.val = temp;
         
         return head;
     }
