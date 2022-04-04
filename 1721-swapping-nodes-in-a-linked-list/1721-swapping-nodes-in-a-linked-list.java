@@ -31,63 +31,69 @@ class Solution {
             return head;
         }
 
-        ListNode jth = head, ith = head, prevJ = null, prevI = null;
+        ListNode jth = head, ith = head;// prevJ = null, prevI = null;
         int jCounter = 1, iCounter = 1;
 
         while (jCounter < j) {
-            prevJ = jth;
+            // prevJ = jth;
             jth = jth.next;
             jCounter++;
         }
 
         while (iCounter < i) {
-            prevI = ith;
+            // prevI = ith;
             ith = ith.next;
             iCounter++;
         }
+        
+        int temp = ith.val;
+        ith.val = jth.val;
+        jth.val = temp;
 
-        if (len == 2) {
-            if (j > i) {
-                jth.next = ith;
-                ith.next = null;
-                head = jth;
-            } else {
-                ith.next = jth;
-                jth.next = null;
-                head = ith;
-            }
+        
+//                              Swapping nodes
+//         if (len == 2) {
+//             if (j > i) {
+//                 jth.next = ith;
+//                 ith.next = null;
+//                 head = jth;
+//             } else {
+//                 ith.next = jth;
+//                 jth.next = null;
+//                 head = ith;
+//             }
             
-        } else {
-            if (i == 1 || j == 1) {
-                if (i == 1) {
-                    jth.next = ith.next;
-                    ith.next = null;
-                    prevJ.next = ith;
-                    head = jth;
-                } else {
-                    ith.next = jth.next;
-                    jth.next = null;
-                    prevI.next = jth;
-                    head = ith;
-                }
-            } else if (Math.abs(i - j) > 1) { //Non-Consecutive , non head and non tail
-                prevI.next = jth;
-                prevJ.next = ith;
-                ListNode temp = ith.next;
-                ith.next = jth.next;
-                jth.next = temp;
-            } else if (Math.abs(i - j) == 1) {
-                if (j > i) {
-                    prevI.next = jth;
-                    ith.next = jth.next;
-                    jth.next = ith;
-                } else {
-                    prevJ.next = ith;
-                    jth.next = ith.next;
-                    ith.next = jth;
-                }
-            }
-        }
+//         } else {
+//             if (i == 1 || j == 1) {
+//                 if (i == 1) {
+//                     jth.next = ith.next;
+//                     ith.next = null;
+//                     prevJ.next = ith;
+//                     head = jth;
+//                 } else {
+//                     ith.next = jth.next;
+//                     jth.next = null;
+//                     prevI.next = jth;
+//                     head = ith;
+//                 }
+//             } else if (Math.abs(i - j) > 1) { //Non-Consecutive , non head and non tail
+//                 prevI.next = jth;
+//                 prevJ.next = ith;
+//                 ListNode temp = ith.next;
+//                 ith.next = jth.next;
+//                 jth.next = temp;
+//             } else if (Math.abs(i - j) == 1) {
+//                 if (j > i) {
+//                     prevI.next = jth;
+//                     ith.next = jth.next;
+//                     jth.next = ith;
+//                 } else {
+//                     prevJ.next = ith;
+//                     jth.next = ith.next;
+//                     ith.next = jth;
+//                 }
+//             }
+//         }
 
         return head;
     }
