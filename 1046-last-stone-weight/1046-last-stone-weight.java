@@ -1,11 +1,11 @@
 class Solution {
     public int lastStoneWeight(int[] stones) {
-        if(stones.length == 0){
-            return 0;
-        }
-        if(stones.length == 1){
-            return stones[0];
-        }
+        // if(stones.length == 0){
+        //     return 0;
+        // }
+        // if(stones.length == 1){
+        //     return stones[0];
+        // }
         
         PriorityQueue<Integer> max_pq = new PriorityQueue<>(Collections.reverseOrder()); 
             
@@ -13,7 +13,7 @@ class Solution {
             max_pq.add(stones[i]);
         }
         
-        while(max_pq.size() != 1 && max_pq.size() != 0){
+        while(max_pq.size() >1){
             
             int y = max_pq.poll();
             int x = max_pq.poll();
@@ -22,15 +22,13 @@ class Solution {
                 continue;
             }
             else{
-                y = y-x;
-                max_pq.add(y);
+                max_pq.add(y-x);
             }
         }
         
         if(max_pq.size()==1){
             return max_pq.poll();
-        }else{
-            return 0;
         }
+        return 0;
     }
 }
