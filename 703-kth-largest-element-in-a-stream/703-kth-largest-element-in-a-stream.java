@@ -1,25 +1,37 @@
 class KthLargest {
 
     int k;
-    // private PriorityQueue<Integer> max_pq = new PriorityQueue<>(Collections.reverseOrder());
-    ArrayList<Integer> arr;
+    private PriorityQueue<Integer> min_pq = new PriorityQueue<>();
+    // ArrayList<Integer> arr;
     
     public KthLargest(int k, int[] nums) {
         this.k = k;
         // this.nums = new nums[nums.length]; 
-        arr = new ArrayList<Integer>();
+        // arr = new ArrayList<Integer>();
         for(int i = 0; i < nums.length; i++){
             // this.nums[i] = nums[i];
             // max_pq.add(nums[i]);
-            arr.add(nums[i]);
+            // arr.add(nums[i]);
+            min_pq.add(nums[i]);
+            if(min_pq.size()>k){
+                min_pq.poll();
+            }
         }
     }
     
     public int add(int val){
-        arr.add(val);
-        Collections.sort(arr);
-        return arr.get(arr.size()-k);
+        min_pq.add(val);
+        if(min_pq.size()>k){
+            min_pq.poll();
+        }
+        return min_pq.peek();
     }
+    
+    // public int add(int val){
+    //     arr.add(val);
+    //     Collections.sort(arr);
+    //     return arr.get(arr.size()-k);
+    // }
     
     // public int add(int val) {
     //     max_pq.add(val);
