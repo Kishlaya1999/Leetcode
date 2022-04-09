@@ -1,2 +1,2 @@
-Time Complexity : O(nlogn)
+Time Complexity : O(nlogk)
 ​
