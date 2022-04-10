@@ -1,33 +1,33 @@
 class Solution {
 
     public int calPoints(String[] ops) {
-        Stack<Integer> scores = new Stack<>();
+        ArrayList<Integer> scores = new ArrayList<>();
 
         for (int i = 0; i < ops.length; i++) {
             if (ops[i].equals("+")) {
-                int previous = scores.pop();
-                int previousToPrevious = scores.pop();
-                scores.push(previousToPrevious);
-                scores.push(previous);
-                scores.push(previous + previousToPrevious);
+                scores.add(scores.get(scores.size()-1) + scores.get(scores.size()-2));
             } 
             else if (ops[i].equals("D")) {
-                scores.push(2 * scores.peek());
+                scores.add(2 * scores.get(scores.size() -1));
             } 
             else if (ops[i].equals("C")) {
-                scores.pop();
+                scores.remove(scores.get(scores.size()-1));
             } 
             else {
-                scores.push(Integer.parseInt(ops[i]));
+                scores.add(Integer.parseInt(ops[i]));
             }
         }
 
         int finalScore = 0;
 
-        while (scores.size() != 0) {
-            finalScore += scores.peek();
-            scores.pop();
+        for(int i = 0; i < scores.size(); i++){
+            finalScore += scores.get(i);
         }
+        
+        // while (int i : scores) {
+        //     finalScore += i;
+        //     // scores.pop();
+        // }
 
         return finalScore;
     }
