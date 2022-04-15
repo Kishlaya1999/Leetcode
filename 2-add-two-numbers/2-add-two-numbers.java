@@ -11,6 +11,8 @@
 class Solution {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+//      When length of one of the linked list in 0    
         if(l1 == null){
             return l2;
         }else if(l2 == null){
@@ -22,6 +24,7 @@ class Solution {
         ListNode head = null,tail = null;
         int carry = 0;
         
+//      When length of the both the linked list are same   
         while(c1!=null && c2!=null){
             
             int sum = c1.val + c2.val + carry;
@@ -41,6 +44,7 @@ class Solution {
             c2 = c2.next;
         }
         
+//      When length of the first linked list is greater thean the second   
         while(c1 != null){
             
             int sum = c1.val + carry;
@@ -54,6 +58,7 @@ class Solution {
             c1 = c1.next;
         }
         
+//      When length of the second linked list is greater thean the first   
         while(c2 != null){
          
             int sum = c2.val + carry;
@@ -68,6 +73,7 @@ class Solution {
             
         }
         
+//      After all the operations there might be a carray left    
         if(carry == 1){
             ListNode newNode = new ListNode(1);
             tail.next = newNode;
