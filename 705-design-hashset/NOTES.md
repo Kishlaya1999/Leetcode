@@ -1,3 +1,3 @@
 For All Operaitions
-Time Complexity : O(n)
-Space Complexity : O(n)
+Time Complexity : O(1)
+Space Complexity : O(1)
