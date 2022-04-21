@@ -6,6 +6,8 @@ class MyHashSet {
         set = new ArrayList();
     }
     
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
     public void add(int key) {
         
         for(int i : set){
@@ -17,6 +19,8 @@ class MyHashSet {
         
     }
     
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
     public void remove(int key) {
         
         for(int i = 0; i < set.size(); i++){
@@ -27,6 +31,8 @@ class MyHashSet {
         return;
     }
     
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
     public boolean contains(int key) {
         
         for(int i : set){
