@@ -1,46 +1,32 @@
 class MyHashSet {
 
-    List<Integer> set;
+    int set[];
     
     public MyHashSet() {
-        set = new ArrayList();
+        set = new int[1000000+1];
     }
     
-    // Time Complexity : O(n)
-    // Space Complexity : O(n)
+    // Time Complexity : O(1)
+    // Space Complexity : O(1)
     public void add(int key) {
         
-        for(int i : set){
-            if(i == key){
-                return;
-            }
-        }
-        set.add(key);
+        set[key] = 1;
         
     }
     
-    // Time Complexity : O(n)
-    // Space Complexity : O(n)
+    // Time Complexity : O(1)
+    // Space Complexity : O(1)
     public void remove(int key) {
         
-        for(int i = 0; i < set.size(); i++){
-            if(set.get(i) == key){
-                set.remove(i);
-            }
-        }
-        return;
+        set[key] = 0;
+
     }
     
-    // Time Complexity : O(n)
-    // Space Complexity : O(n)
+    // Time Complexity : O(1)
+    // Space Complexity : O(1)
     public boolean contains(int key) {
         
-        for(int i : set){
-            if(i == key){
-                return true;
-            }
-        }
-        return false;
+        return set[key] == 1;
     }
 }
 
