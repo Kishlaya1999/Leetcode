@@ -1,18 +1,14 @@
 import java.util.*;
 
 class Solution {
+
     public int singleNumber(int[] nums) {
-        HashMap<Integer,Integer> freq = new HashMap<>();
-        
-        for(int i = 0 ; i< nums.length; i++ ){
-            freq.put(nums[i] , freq.getOrDefault(nums[i] , 0) + 1);
+        int result = 0;
+        for (int i : nums) {
+            result = result ^ i;
+            //A^A^B = B => A^A = 0 =>  0^B = B at the end the number which comes only once will remain all the other number will become zero
         }
-        
-        for(int i = 0; i < nums.length ; i++){
-            if(freq.get(nums[i]) == 1){
-                return nums[i];
-            }
-        }
-        return Integer.MIN_VALUE;
+        //4^2^4^2^1 = 1
+        return result;
     }
 }
