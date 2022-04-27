@@ -9,9 +9,10 @@ class Solution {
         int[] ans = new int[2];
         
         for(int i = 0; i< nums.length; i++){
-            if(map.containsKey(target-nums[i]) && map.get(target-nums[i]) != i){
+            int val = target-nums[i];
+            if(map.containsKey(val) && map.get(val) != i){
                 ans[0] = i;
-                ans[1] = map.get(target-nums[i]);
+                ans[1] = map.get(val);
                 break;
             }
         }
