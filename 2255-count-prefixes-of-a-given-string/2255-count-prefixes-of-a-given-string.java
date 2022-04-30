@@ -6,7 +6,7 @@ class Solution {
                 continue;
             }
             
-            if(str.equals(s.substring(0,str.length()))){
+            if(s.startsWith(str)){
                 count++;
             }
             
