@@ -6,12 +6,10 @@ class Solution {
                 continue;
             }
             
-            int i = 0;
-            for(i = 0; i < str.length(); i++){
-                if(str.charAt(i) != s.charAt(i)) break;
+            if(str.equals(s.substring(0,str.length()))){
+                count++;
             }
             
-            if(i == str.length()) count++;
         }
         return count;
     }
