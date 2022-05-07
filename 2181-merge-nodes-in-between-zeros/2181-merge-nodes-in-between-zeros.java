@@ -10,35 +10,36 @@
  */
 class Solution {
     public ListNode mergeNodes(ListNode head) {
-        head = head.next;
         
+        ListNode newListNode = head;
+        ListNode current = head.next;
+        // ListNode previous = null;
         int sum = 0;
-        ListNode newHead = null, tail = null;
-        // ListNode current = head;
         
-        while(head != null){
+        while(current != null){
             
-            if(head.val == 0){
-                ListNode insert = new ListNode(sum);
-                
-                if(newHead == null){
-                    newHead = insert;
-                    tail = insert;
-                }else{
-                    tail.next = insert;
-                    tail = tail.next;
+            if(current.val == 0){
+                newListNode.val = sum;
+                if(current.next == null){
+                    newListNode.next = null;
+                    break;
                 }
-                
+                newListNode.next = current;
+                newListNode = current;
                 sum = 0;
             }
-            
             else{
-                sum += head.val;
+                sum+=current.val;
             }
-            head = head.next;
+            
+            // if(current.next == null){
+            //     previous.next = null;
+            //     break;
+            // }
+            // previous = current;
+            current = current.next;
+            
         }
-        
-        return newHead;
-        
+        return head;
     }
 }
