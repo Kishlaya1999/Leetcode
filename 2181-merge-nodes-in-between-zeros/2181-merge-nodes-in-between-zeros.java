@@ -14,11 +14,11 @@ class Solution {
         
         int sum = 0;
         ListNode newHead = null, tail = null;
-        ListNode current = head;
+        // ListNode current = head;
         
-        while(current != null){
+        while(head != null){
             
-            if(current.val == 0){
+            if(head.val == 0){
                 ListNode insert = new ListNode(sum);
                 
                 if(newHead == null){
@@ -33,9 +33,9 @@ class Solution {
             }
             
             else{
-                sum += current.val;
+                sum += head.val;
             }
-            current = current.next;
+            head = head.next;
         }
         
         return newHead;
