@@ -36,11 +36,11 @@ class Solution {
                 }
                 subAns.add(q.poll().val);
             }
-            st.push(subAns);
+            st.push(subAns);  //Adding elements to each level list to stack (Stack<List>)
         }
         
         while(!st.isEmpty()){
-            ans.add(st.pop());
+            ans.add(st.pop()); // Popping elements from stack and adding to ans (List<List>)
         }
         return ans;
     }
