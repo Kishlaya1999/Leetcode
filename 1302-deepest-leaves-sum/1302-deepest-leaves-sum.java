@@ -21,8 +21,9 @@ class Solution {
         q.add(root);
 
         while(!q.isEmpty()){
+            // qSize holds the no of nodes at each level
             int qSize = q.size();
-
+            // changing the sum of the previous level to 0
             sum = 0;
             
             for(int i = 0; i < qSize; i++){
