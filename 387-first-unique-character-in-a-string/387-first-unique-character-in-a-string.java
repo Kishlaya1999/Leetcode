@@ -4,12 +4,14 @@ class Solution {
         
         for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
-            if(freq.containsKey(ch)){
-                freq.put(ch,freq.get(ch) + 1);
-            }
-            else{
-                freq.put(ch, 1);
-            }
+            // if(freq.containsKey(ch)){
+            //     freq.put(ch,freq.get(ch) + 1);
+            // }
+            // else{
+            //     freq.put(ch, 1);
+            // }
+            
+            freq.put(ch,freq.getOrDefault(ch,0) + 1);
         }
         
         int index = -1;
