@@ -2,6 +2,11 @@
  * @param {number[]} prices
  * @return {number}
  */
+ 
+// For getting the maximum profit on selling the stock we need to calculate the maximum profit at every index of the array. And for finding the max profit we need to get the min. price up until the traversed index, so that using the min price and current index we could find the max profit for current index and store it somewhere for comparing the max profit in future.
+
+// From the above understanding we can observe that we need to keep the track of 2 things which are minValue of stock and maxProfit up until the traversed index. And if we keep on calculating these 2 things so at the end of the array iteration we would get the maxProfit which we can return .
+
 var maxProfit = function(prices) {
 
   let minVal = +Infinity,   // variable for tracking the minValue of stock
