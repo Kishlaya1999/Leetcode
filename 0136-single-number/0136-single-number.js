@@ -4,60 +4,61 @@
  */
 
 /*
-Approach: Frequency Counter using Hash Map
+Approach: XOR Bit Manipulation (Optimal Solution)
 
 Key Idea:
-- Use a hash map (object) to count the frequency of each number
-- Every number appears twice except one that appears once
-- Find and return the number with frequency 1
+- Use XOR (^) operation which has special mathematical properties:
+  * a ^ a = 0 (any number XORed with itself equals 0)
+  * a ^ 0 = a (any number XORed with 0 equals itself)
+  * XOR is commutative and associative: a ^ b ^ c = c ^ b ^ a
+- Since every number appears twice except one, all pairs cancel out to 0
+- The single number remains after XORing all elements
 
 Algorithm:
-1. Create an empty frequency map 'freq' = {}
-2. First pass - Count frequencies:
-   - Traverse the array
-   - For each number:
-     * If not in map, initialize with frequency 1
-     * If already in map, increment frequency
-3. Second pass - Find the single number:
-   - Traverse the array again
-   - Check frequency of each number in the map
-   - Return the number with frequency == 1
+1. Initialize 'singleNumber' = 0 (XOR identity element)
+2. Traverse the array and XOR each element with 'singleNumber'
+3. All duplicate numbers cancel out (become 0)
+4. Return the final result which is the single number
 
 Example: [4, 1, 2, 1, 2]
-- First pass (building frequency map):
-  - i=0: nums[0]=4 → freq = {4: 1}
-  - i=1: nums[1]=1 → freq = {4: 1, 1: 1}
-  - i=2: nums[2]=2 → freq = {4: 1, 1: 1, 2: 1}
-  - i=3: nums[3]=1 → freq = {4: 1, 1: 2, 2: 1}
-  - i=4: nums[4]=2 → freq = {4: 1, 1: 2, 2: 2}
-  
-- Second pass (finding single number):
-  - i=0: freq[4] = 1 ✓ → Return 4
+- Start: singleNumber = 0
+- i=0: singleNumber = 0 ^ 4 = 4
+- i=1: singleNumber = 4 ^ 1 = 5 (binary: 100 ^ 001 = 101)
+- i=2: singleNumber = 5 ^ 2 = 7 (binary: 101 ^ 010 = 111)
+- i=3: singleNumber = 7 ^ 1 = 6 (binary: 111 ^ 001 = 110)
+- i=4: singleNumber = 6 ^ 2 = 4 (binary: 110 ^ 010 = 100)
+- Return 4 ✓
+
+Breakdown of how pairs cancel:
+4 ^ 1 ^ 2 ^ 1 ^ 2
+= 4 ^ (1 ^ 1) ^ (2 ^ 2)  [rearranging due to commutative property]
+= 4 ^ 0 ^ 0
+= 4
 
 Example: [2, 2, 1]
-- First pass: freq = {2: 2, 1: 1}
-- Second pass: freq[2] = 2 (skip), freq[1] = 1 ✓ → Return 1
+- Start: singleNumber = 0
+- i=0: singleNumber = 0 ^ 2 = 2
+- i=1: singleNumber = 2 ^ 2 = 0 (pair cancels out)
+- i=2: singleNumber = 0 ^ 1 = 1
+- Return 1 ✓
 
-Time Complexity: O(n) - two passes through the array
-Space Complexity: O(n) - hash map stores up to n/2 + 1 unique numbers
+Time Complexity: O(n) - single pass through the array
+Space Complexity: O(1) - only uses one variable (constant space)
+
+Advantages over Hash Map approach:
+- No extra space needed (O(1) vs O(n))
+- Single pass instead of two passes
+- Elegant mathematical solution
 */
 
-var singleNumber = function (nums) {
-
-  let freq = {};  // Frequency map to store count of each number
-
-  // First pass: Build frequency map
-  for (let i = 0; i < nums.length; i++) {
-    if (!freq[nums[i]]) {
-      freq[nums[i]] = 1;  // Initialize count for new number
-    } else {
-      freq[nums[i]]++;  // Increment count for existing number
+var singleNumber = function(nums) {
+    
+    let singleNumber = 0;  // Initialize with 0 (XOR identity)
+    
+    // XOR all elements - pairs cancel out, single number remains
+    for (let i = 0; i < nums.length; i++) {
+        singleNumber = singleNumber ^ nums[i];
     }
-  }
 
-  // Second pass: Find number with frequency 1
-  for (let i = 0; i < nums.length; i++) {
-    if (freq[nums[i]] == 1) return nums[i];  // Found the single number
-  }
-
+    return singleNumber;  // The number that appears only once
 };
