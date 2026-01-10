@@ -2,118 +2,118 @@
 
 ## 📊 Problems by Topic
 
-| S.No | Data Structure | Pattern | LC# | Solution |
-|------|---------------|---------|-----|----------|
-| | **Array** | | | |
-| 1 | Array | Bit Manipulation | [LC#121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0121-best-time-to-buy-and-sell-stock) |
-| 2 | Array | Bit Manipulation | [LC#136](https://leetcode.com/problems/single-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/136-single-number) |
-| 3 | Array | Bit Manipulation | [LC#268](https://leetcode.com/problems/missing-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/268-missing-number) |
-| 4 | Array | Counting | [LC#485](https://leetcode.com/problems/max-consecutive-ones/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0485-max-consecutive-ones) |
-| 5 | Array | Cyclic Rotation | [LC#189](https://leetcode.com/problems/rotate-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/189-rotate-array) |
-| 6 | Array | Dutch National Flag | [LC#75](https://leetcode.com/problems/sort-colors/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/75-sort-colors) |
-| 7 | Array | Hash Map | [LC#1](https://leetcode.com/problems/two-sum/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1-two-sum) |
-| 8 | Array | Hash Map | [LC#347](https://leetcode.com/problems/top-k-frequent-elements/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/347-top-k-frequent-elements) |
-| 9 | Array | Hash Map | [LC#923](https://leetcode.com/problems/3sum-with-multiplicity/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/923-3sum-with-multiplicity) |
-| 10 | Array | Hash Map | [LC#1512](https://leetcode.com/problems/number-of-good-pairs/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1512-number-of-good-pairs) |
-| 11 | Array | Hash Set | [LC#217](https://leetcode.com/problems/contains-duplicate/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/217-contains-duplicate) |
-| 12 | Array | Kadane's Algorithm | [LC#53](https://leetcode.com/problems/maximum-subarray/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/53-maximum-subarray) |
-| 13 | Array | Matrix | [LC#48](https://leetcode.com/problems/rotate-image/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/48-rotate-image) |
-| 14 | Array | Matrix | [LC#54](https://leetcode.com/problems/spiral-matrix/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/54-spiral-matrix) |
-| 15 | Array | Matrix | [LC#59](https://leetcode.com/problems/spiral-matrix-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/59-spiral-matrix-ii) |
-| 16 | Array | Matrix | [LC#289](https://leetcode.com/problems/game-of-life/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/289-game-of-life) |
-| 17 | Array | Matrix | [LC#1260](https://leetcode.com/problems/shift-2d-grid/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1260-shift-2d-grid) |
-| 18 | Array | Matrix | [LC#1672](https://leetcode.com/problems/richest-customer-wealth/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1672-richest-customer-wealth) |
-| 19 | Array | Permutation | [LC#31](https://leetcode.com/problems/next-permutation/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/31-next-permutation) |
-| 20 | Array | Prefix Sum | [LC#1480](https://leetcode.com/problems/running-sum-of-1d-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1480-running-sum-of-1d-array) |
-| 21 | Array | Quickselect | [LC#215](https://leetcode.com/problems/kth-largest-element-in-an-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/215-kth-largest-element-in-an-array) |
-| 22 | Array | Simulation | [LC#1470](https://leetcode.com/problems/shuffle-the-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1470-shuffle-the-array) |
-| 23 | Array | Simulation | [LC#1920](https://leetcode.com/problems/build-array-from-permutation/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1920-build-array-from-permutation) |
-| 24 | Array | Simulation | [LC#1929](https://leetcode.com/problems/concatenation-of-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1929-concatenation-of-array) |
-| 25 | Array | Two Pointers | [LC#11](https://leetcode.com/problems/container-with-most-water/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/11-container-with-most-water) |
-| 26 | Array | Two Pointers | [LC#26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0026-remove-duplicates-from-sorted-array) |
-| 27 | Array | Two Pointers | [LC#27](https://leetcode.com/problems/remove-element/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0027-remove-element) |
-| 28 | Array | Two Pointers | [LC#88](https://leetcode.com/problems/merge-sorted-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/88-merge-sorted-array) |
-| 29 | Array | Two Pointers | [LC#283](https://leetcode.com/problems/move-zeroes/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes) |
-| 30 | Array | Two Pointers | [LC#350](https://leetcode.com/problems/intersection-of-two-arrays-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/350-intersection-of-two-arrays-ii) |
-| 31 | Array | Two Pointers | [LC#905](https://leetcode.com/problems/sort-array-by-parity/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/905-sort-array-by-parity) |
-| | **Linked List** | | | |
-| 32 | Linked List | Bit Manipulation | [LC#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1290-convert-binary-number-in-a-linked-list-to-integer) |
-| 33 | Linked List | Dummy Node | [LC#203](https://leetcode.com/problems/remove-linked-list-elements/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/203-remove-linked-list-elements) |
-| 34 | Linked List | In-place | [LC#24](https://leetcode.com/problems/swap-nodes-in-pairs/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/24-swap-nodes-in-pairs) |
-| 35 | Linked List | In-place | [LC#237](https://leetcode.com/problems/delete-node-in-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/237-delete-node-in-a-linked-list) |
-| 36 | Linked List | Iteration | [LC#206](https://leetcode.com/problems/reverse-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/206-reverse-linked-list) |
-| 37 | Linked List | Merge Sort | [LC#148](https://leetcode.com/problems/sort-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/148-sort-list) |
-| 38 | Linked List | Recursion | [LC#21](https://leetcode.com/problems/merge-two-sorted-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/21-merge-two-sorted-lists) |
-| 39 | Linked List | Stack | [LC#445](https://leetcode.com/problems/add-two-numbers-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/445-add-two-numbers-ii) |
-| 40 | Linked List | Two Pointers | [LC#2](https://leetcode.com/problems/add-two-numbers/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2-add-two-numbers) |
-| 41 | Linked List | Two Pointers | [LC#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/19-remove-nth-node-from-end-of-list) |
-| 42 | Linked List | Two Pointers | [LC#61](https://leetcode.com/problems/rotate-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/61-rotate-list) |
-| 43 | Linked List | Two Pointers | [LC#82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/82-remove-duplicates-from-sorted-list-ii) |
-| 44 | Linked List | Two Pointers | [LC#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/83-remove-duplicates-from-sorted-list) |
-| 45 | Linked List | Two Pointers | [LC#86](https://leetcode.com/problems/partition-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/86-partition-list) |
-| 46 | Linked List | Two Pointers | [LC#92](https://leetcode.com/problems/reverse-linked-list-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/92-reverse-linked-list-ii) |
-| 47 | Linked List | Two Pointers | [LC#141](https://leetcode.com/problems/linked-list-cycle/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/141-linked-list-cycle) |
-| 48 | Linked List | Two Pointers | [LC#143](https://leetcode.com/problems/reorder-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/143-reorder-list) |
-| 49 | Linked List | Two Pointers | [LC#160](https://leetcode.com/problems/intersection-of-two-linked-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/160-intersection-of-two-linked-lists) |
-| 50 | Linked List | Two Pointers | [LC#234](https://leetcode.com/problems/palindrome-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/234-palindrome-linked-list) |
-| 51 | Linked List | Two Pointers | [LC#328](https://leetcode.com/problems/odd-even-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/328-odd-even-linked-list) |
-| 52 | Linked List | Two Pointers | [LC#876](https://leetcode.com/problems/middle-of-the-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/876-middle-of-the-linked-list) |
-| 53 | Linked List | Two Pointers | [LC#1669](https://leetcode.com/problems/merge-in-between-linked-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1669-merge-in-between-linked-lists) |
-| 54 | Linked List | Two Pointers | [LC#1721](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1721-swapping-nodes-in-a-linked-list) |
-| 55 | Linked List | Two Pointers | [LC#2095](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2095-delete-the-middle-node-of-a-linked-list) |
-| 56 | Linked List | Two Pointers | [LC#2130](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2130-maximum-twin-sum-of-a-linked-list) |
-| 57 | Linked List | Two Pointers | [LC#2181](https://leetcode.com/problems/merge-nodes-in-between-zeros/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2181-merge-nodes-in-between-zeros) |
-| | **Binary Tree** | | | |
-| 58 | Binary Tree | BFS | [LC#102](https://leetcode.com/problems/binary-tree-level-order-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/102-binary-tree-level-order-traversal) |
-| 59 | Binary Tree | BFS | [LC#107](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/107-binary-tree-level-order-traversal-ii) |
-| 60 | Binary Tree | BFS | [LC#111](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/111-minimum-depth-of-binary-tree) |
-| 61 | Binary Tree | BFS | [LC#1302](https://leetcode.com/problems/deepest-leaves-sum/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1302-deepest-leaves-sum) |
-| 62 | Binary Tree | DFS | [LC#104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/104-maximum-depth-of-binary-tree) |
-| 63 | Binary Tree | DFS | [LC#236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/236-lowest-common-ancestor-of-a-binary-tree) |
-| 64 | Binary Tree | DFS | [LC#2236](https://leetcode.com/problems/root-equals-sum-of-children/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2236-root-equals-sum-of-children) |
-| 65 | Binary Tree | DFS - Inorder | [LC#94](https://leetcode.com/problems/binary-tree-inorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/94-binary-tree-inorder-traversal) |
-| 66 | Binary Tree | DFS - Postorder | [LC#145](https://leetcode.com/problems/binary-tree-postorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/145-binary-tree-postorder-traversal) |
-| 67 | Binary Tree | DFS - Preorder | [LC#144](https://leetcode.com/problems/binary-tree-preorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/144-binary-tree-preorder-traversal) |
-| | **Binary Search Tree** | | | |
-| 68 | Binary Search Tree | DFS | [LC#235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/235-lowest-common-ancestor-of-a-binary-search-tree) |
-| 69 | Binary Search Tree | DFS | [LC#669](https://leetcode.com/problems/trim-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/669-trim-a-binary-search-tree) |
-| 70 | Binary Search Tree | DFS | [LC#700](https://leetcode.com/problems/search-in-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/700-search-in-a-binary-search-tree) |
-| 71 | Binary Search Tree | DFS | [LC#938](https://leetcode.com/problems/range-sum-of-bst/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/938-range-sum-of-bst) |
-| 72 | Binary Search Tree | DFS - Inorder | [LC#99](https://leetcode.com/problems/recover-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/99-recover-binary-search-tree) |
-| 73 | Binary Search Tree | DFS - Inorder | [LC#230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/230-kth-smallest-element-in-a-bst) |
-| 74 | Binary Search Tree | DFS - Inorder | [LC#897](https://leetcode.com/problems/increasing-order-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/897-increasing-order-search-tree) |
-| 75 | Binary Search Tree | DFS - Reverse Inorder | [LC#538](https://leetcode.com/problems/convert-bst-to-greater-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/538-convert-bst-to-greater-tree) |
-| 76 | Binary Search Tree | DFS - Reverse Inorder | [LC#1038](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1038-binary-search-tree-to-greater-sum-tree) |
-| 77 | Binary Search Tree | Iterator | [LC#173](https://leetcode.com/problems/binary-search-tree-iterator/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/173-binary-search-tree-iterator) |
-| | **String** | | | |
-| 78 | String | Hash Map | [LC#242](https://leetcode.com/problems/valid-anagram/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/242-valid-anagram) |
-| 79 | String | Hash Map | [LC#387](https://leetcode.com/problems/first-unique-character-in-a-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/387-first-unique-character-in-a-string) |
-| 80 | String | Hash Set | [LC#771](https://leetcode.com/problems/jewels-and-stones/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/771-jewels-and-stones) |
-| 81 | String | Math | [LC#415](https://leetcode.com/problems/add-strings/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/415-add-strings) |
-| 82 | String | Simulation | [LC#412](https://leetcode.com/problems/fizz-buzz/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/412-fizz-buzz) |
-| 83 | String | Simulation | [LC#1528](https://leetcode.com/problems/shuffle-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1528-shuffle-string) |
-| 84 | String | Simulation | [LC#2011](https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2011-final-value-of-variable-after-performing-operations) |
-| 85 | String | Stack | [LC#844](https://leetcode.com/problems/backspace-string-compare/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/844-backspace-string-compare) |
-| 86 | String | String Manipulation | [LC#1108](https://leetcode.com/problems/defanging-an-ip-address/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1108-defanging-an-ip-address) |
-| 87 | String | String Matching | [LC#1455](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1455-check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence) |
-| 88 | String | String Matching | [LC#1961](https://leetcode.com/problems/check-if-string-is-a-prefix-of-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1961-check-if-string-is-a-prefix-of-array) |
-| 89 | String | String Matching | [LC#2185](https://leetcode.com/problems/counting-words-with-a-given-prefix/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2185-counting-words-with-a-given-prefix) |
-| 90 | String | String Matching | [LC#2255](https://leetcode.com/problems/count-prefixes-of-a-given-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2255-count-prefixes-of-a-given-string) |
-| 91 | String | String Split | [LC#2114](https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2114-maximum-number-of-words-found-in-sentences) |
-| 92 | String | Two Pointers | [LC#344](https://leetcode.com/problems/reverse-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/344-reverse-string) |
-| 93 | String | Two Pointers | [LC#680](https://leetcode.com/problems/valid-palindrome-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/680-valid-palindrome-ii) |
-| | **Stack** | | | |
-| 94 | Stack | Simulation | [LC#682](https://leetcode.com/problems/baseball-game/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/682-baseball-game) |
-| | **Heap** | | | |
-| 95 | Heap | Max Heap | [LC#1046](https://leetcode.com/problems/last-stone-weight/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1046-last-stone-weight) |
-| 96 | Heap | Min Heap | [LC#703](https://leetcode.com/problems/kth-largest-element-in-a-stream/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/703-kth-largest-element-in-a-stream) |
-| | **Design** | | | |
-| 97 | Design | Hash Map | [LC#535](https://leetcode.com/problems/encode-and-decode-tinyurl/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/535-encode-and-decode-tinyurl) |
-| 98 | Design | Hash Map | [LC#706](https://leetcode.com/problems/design-hashmap/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/706-design-hashmap) |
-| 99 | Design | Hash Map | [LC#1396](https://leetcode.com/problems/design-underground-system/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1396-design-underground-system) |
-| 100 | Design | Hash Set | [LC#705](https://leetcode.com/problems/design-hashset/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/705-design-hashset) |
-| 101 | Design | Iterator | [LC#284](https://leetcode.com/problems/peeking-iterator/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/284-peeking-iterator) |
-| | **Math** | | | |
-| 102 | Math | Addition | [LC#2235](https://leetcode.com/problems/add-two-integers/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2235-add-two-integers) |
-| 103 | Math | Binary Search | [LC#69](https://leetcode.com/problems/sqrtx/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/69-sqrtx) |
-| 104 | Math | Dynamic Programming | [LC#509](https://leetcode.com/problems/fibonacci-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/509-fibonacci-number) |
+| S.No | Problem | Data Structure | Pattern | LC# | Solution |
+|------|---------|---------------|---------|-----|----------|
+| | | **Array** | | | |
+| 1 | Best Time to Buy and Sell Stock | Array | Bit Manipulation | [LC#121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0121-best-time-to-buy-and-sell-stock) |
+| 2 | Single Number | Array | Bit Manipulation | [LC#136](https://leetcode.com/problems/single-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/136-single-number) |
+| 3 | Missing Number | Array | Bit Manipulation | [LC#268](https://leetcode.com/problems/missing-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/268-missing-number) |
+| 4 | Max Consecutive Ones | Array | Counting | [LC#485](https://leetcode.com/problems/max-consecutive-ones/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0485-max-consecutive-ones) |
+| 5 | Rotate Array | Array | Cyclic Rotation | [LC#189](https://leetcode.com/problems/rotate-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/189-rotate-array) |
+| 6 | Sort Colors | Array | Dutch National Flag | [LC#75](https://leetcode.com/problems/sort-colors/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/75-sort-colors) |
+| 7 | Two Sum | Array | Hash Map | [LC#1](https://leetcode.com/problems/two-sum/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1-two-sum) |
+| 8 | Top K Frequent Elements | Array | Hash Map | [LC#347](https://leetcode.com/problems/top-k-frequent-elements/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/347-top-k-frequent-elements) |
+| 9 | 3Sum With Multiplicity | Array | Hash Map | [LC#923](https://leetcode.com/problems/3sum-with-multiplicity/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/923-3sum-with-multiplicity) |
+| 10 | Number of Good Pairs | Array | Hash Map | [LC#1512](https://leetcode.com/problems/number-of-good-pairs/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1512-number-of-good-pairs) |
+| 11 | Contains Duplicate | Array | Hash Set | [LC#217](https://leetcode.com/problems/contains-duplicate/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/217-contains-duplicate) |
+| 12 | Maximum Subarray | Array | Kadane's Algorithm | [LC#53](https://leetcode.com/problems/maximum-subarray/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/53-maximum-subarray) |
+| 13 | Rotate Image | Array | Matrix | [LC#48](https://leetcode.com/problems/rotate-image/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/48-rotate-image) |
+| 14 | Spiral Matrix | Array | Matrix | [LC#54](https://leetcode.com/problems/spiral-matrix/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/54-spiral-matrix) |
+| 15 | Spiral Matrix II | Array | Matrix | [LC#59](https://leetcode.com/problems/spiral-matrix-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/59-spiral-matrix-ii) |
+| 16 | Game of Life | Array | Matrix | [LC#289](https://leetcode.com/problems/game-of-life/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/289-game-of-life) |
+| 17 | Shift 2D Grid | Array | Matrix | [LC#1260](https://leetcode.com/problems/shift-2d-grid/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1260-shift-2d-grid) |
+| 18 | Richest Customer Wealth | Array | Matrix | [LC#1672](https://leetcode.com/problems/richest-customer-wealth/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1672-richest-customer-wealth) |
+| 19 | Next Permutation | Array | Permutation | [LC#31](https://leetcode.com/problems/next-permutation/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/31-next-permutation) |
+| 20 | Running Sum of 1d Array | Array | Prefix Sum | [LC#1480](https://leetcode.com/problems/running-sum-of-1d-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1480-running-sum-of-1d-array) |
+| 21 | Kth Largest Element in an Array | Array | Quickselect | [LC#215](https://leetcode.com/problems/kth-largest-element-in-an-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/215-kth-largest-element-in-an-array) |
+| 22 | Shuffle the Array | Array | Simulation | [LC#1470](https://leetcode.com/problems/shuffle-the-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1470-shuffle-the-array) |
+| 23 | Build Array from Permutation | Array | Simulation | [LC#1920](https://leetcode.com/problems/build-array-from-permutation/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1920-build-array-from-permutation) |
+| 24 | Concatenation of Array | Array | Simulation | [LC#1929](https://leetcode.com/problems/concatenation-of-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1929-concatenation-of-array) |
+| 25 | Container With Most Water | Array | Two Pointers | [LC#11](https://leetcode.com/problems/container-with-most-water/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/11-container-with-most-water) |
+| 26 | Remove Duplicates from Sorted Array | Array | Two Pointers | [LC#26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0026-remove-duplicates-from-sorted-array) |
+| 27 | Remove Element | Array | Two Pointers | [LC#27](https://leetcode.com/problems/remove-element/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0027-remove-element) |
+| 28 | Merge Sorted Array | Array | Two Pointers | [LC#88](https://leetcode.com/problems/merge-sorted-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/88-merge-sorted-array) |
+| 29 | Move Zeroes | Array | Two Pointers | [LC#283](https://leetcode.com/problems/move-zeroes/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes) |
+| 30 | Intersection of Two Arrays II | Array | Two Pointers | [LC#350](https://leetcode.com/problems/intersection-of-two-arrays-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/350-intersection-of-two-arrays-ii) |
+| 31 | Sort Array By Parity | Array | Two Pointers | [LC#905](https://leetcode.com/problems/sort-array-by-parity/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/905-sort-array-by-parity) |
+| | | **Linked List** | | | |
+| 32 | Convert Binary Number in a Linked List to Integer | Linked List | Bit Manipulation | [LC#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1290-convert-binary-number-in-a-linked-list-to-integer) |
+| 33 | Remove Linked List Elements | Linked List | Dummy Node | [LC#203](https://leetcode.com/problems/remove-linked-list-elements/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/203-remove-linked-list-elements) |
+| 34 | Swap Nodes in Pairs | Linked List | In-place | [LC#24](https://leetcode.com/problems/swap-nodes-in-pairs/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/24-swap-nodes-in-pairs) |
+| 35 | Delete Node in a Linked List | Linked List | In-place | [LC#237](https://leetcode.com/problems/delete-node-in-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/237-delete-node-in-a-linked-list) |
+| 36 | Reverse Linked List | Linked List | Iteration | [LC#206](https://leetcode.com/problems/reverse-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/206-reverse-linked-list) |
+| 37 | Sort List | Linked List | Merge Sort | [LC#148](https://leetcode.com/problems/sort-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/148-sort-list) |
+| 38 | Merge Two Sorted Lists | Linked List | Recursion | [LC#21](https://leetcode.com/problems/merge-two-sorted-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/21-merge-two-sorted-lists) |
+| 39 | Add Two Numbers II | Linked List | Stack | [LC#445](https://leetcode.com/problems/add-two-numbers-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/445-add-two-numbers-ii) |
+| 40 | Add Two Numbers | Linked List | Two Pointers | [LC#2](https://leetcode.com/problems/add-two-numbers/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2-add-two-numbers) |
+| 41 | Remove Nth Node From End of List | Linked List | Two Pointers | [LC#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/19-remove-nth-node-from-end-of-list) |
+| 42 | Rotate List | Linked List | Two Pointers | [LC#61](https://leetcode.com/problems/rotate-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/61-rotate-list) |
+| 43 | Remove Duplicates from Sorted List II | Linked List | Two Pointers | [LC#82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/82-remove-duplicates-from-sorted-list-ii) |
+| 44 | Remove Duplicates from Sorted List | Linked List | Two Pointers | [LC#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/83-remove-duplicates-from-sorted-list) |
+| 45 | Partition List | Linked List | Two Pointers | [LC#86](https://leetcode.com/problems/partition-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/86-partition-list) |
+| 46 | Reverse Linked List II | Linked List | Two Pointers | [LC#92](https://leetcode.com/problems/reverse-linked-list-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/92-reverse-linked-list-ii) |
+| 47 | Linked List Cycle | Linked List | Two Pointers | [LC#141](https://leetcode.com/problems/linked-list-cycle/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/141-linked-list-cycle) |
+| 48 | Reorder List | Linked List | Two Pointers | [LC#143](https://leetcode.com/problems/reorder-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/143-reorder-list) |
+| 49 | Intersection of Two Linked Lists | Linked List | Two Pointers | [LC#160](https://leetcode.com/problems/intersection-of-two-linked-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/160-intersection-of-two-linked-lists) |
+| 50 | Palindrome Linked List | Linked List | Two Pointers | [LC#234](https://leetcode.com/problems/palindrome-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/234-palindrome-linked-list) |
+| 51 | Odd Even Linked List | Linked List | Two Pointers | [LC#328](https://leetcode.com/problems/odd-even-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/328-odd-even-linked-list) |
+| 52 | Middle of the Linked List | Linked List | Two Pointers | [LC#876](https://leetcode.com/problems/middle-of-the-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/876-middle-of-the-linked-list) |
+| 53 | Merge In Between Linked Lists | Linked List | Two Pointers | [LC#1669](https://leetcode.com/problems/merge-in-between-linked-lists/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1669-merge-in-between-linked-lists) |
+| 54 | Swapping Nodes in a Linked List | Linked List | Two Pointers | [LC#1721](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1721-swapping-nodes-in-a-linked-list) |
+| 55 | Delete the Middle Node of a Linked List | Linked List | Two Pointers | [LC#2095](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2095-delete-the-middle-node-of-a-linked-list) |
+| 56 | Maximum Twin Sum of a Linked List | Linked List | Two Pointers | [LC#2130](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2130-maximum-twin-sum-of-a-linked-list) |
+| 57 | Merge Nodes in Between Zeros | Linked List | Two Pointers | [LC#2181](https://leetcode.com/problems/merge-nodes-in-between-zeros/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2181-merge-nodes-in-between-zeros) |
+| | | **Binary Tree** | | | |
+| 58 | Binary Tree Level Order Traversal | Binary Tree | BFS | [LC#102](https://leetcode.com/problems/binary-tree-level-order-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/102-binary-tree-level-order-traversal) |
+| 59 | Binary Tree Level Order Traversal II | Binary Tree | BFS | [LC#107](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/107-binary-tree-level-order-traversal-ii) |
+| 60 | Minimum Depth of Binary Tree | Binary Tree | BFS | [LC#111](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/111-minimum-depth-of-binary-tree) |
+| 61 | Deepest Leaves Sum | Binary Tree | BFS | [LC#1302](https://leetcode.com/problems/deepest-leaves-sum/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1302-deepest-leaves-sum) |
+| 62 | Maximum Depth of Binary Tree | Binary Tree | DFS | [LC#104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/104-maximum-depth-of-binary-tree) |
+| 63 | Lowest Common Ancestor of a Binary Tree | Binary Tree | DFS | [LC#236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/236-lowest-common-ancestor-of-a-binary-tree) |
+| 64 | Root Equals Sum of Children | Binary Tree | DFS | [LC#2236](https://leetcode.com/problems/root-equals-sum-of-children/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2236-root-equals-sum-of-children) |
+| 65 | Binary Tree Inorder Traversal | Binary Tree | DFS - Inorder | [LC#94](https://leetcode.com/problems/binary-tree-inorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/94-binary-tree-inorder-traversal) |
+| 66 | Binary Tree Postorder Traversal | Binary Tree | DFS - Postorder | [LC#145](https://leetcode.com/problems/binary-tree-postorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/145-binary-tree-postorder-traversal) |
+| 67 | Binary Tree Preorder Traversal | Binary Tree | DFS - Preorder | [LC#144](https://leetcode.com/problems/binary-tree-preorder-traversal/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/144-binary-tree-preorder-traversal) |
+| | | **Binary Search Tree** | | | |
+| 68 | Lowest Common Ancestor of a Binary Search Tree | Binary Search Tree | DFS | [LC#235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/235-lowest-common-ancestor-of-a-binary-search-tree) |
+| 69 | Trim a Binary Search Tree | Binary Search Tree | DFS | [LC#669](https://leetcode.com/problems/trim-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/669-trim-a-binary-search-tree) |
+| 70 | Search in a Binary Search Tree | Binary Search Tree | DFS | [LC#700](https://leetcode.com/problems/search-in-a-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/700-search-in-a-binary-search-tree) |
+| 71 | Range Sum of BST | Binary Search Tree | DFS | [LC#938](https://leetcode.com/problems/range-sum-of-bst/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/938-range-sum-of-bst) |
+| 72 | Recover Binary Search Tree | Binary Search Tree | DFS - Inorder | [LC#99](https://leetcode.com/problems/recover-binary-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/99-recover-binary-search-tree) |
+| 73 | Kth Smallest Element in a BST | Binary Search Tree | DFS - Inorder | [LC#230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/230-kth-smallest-element-in-a-bst) |
+| 74 | Increasing Order Search Tree | Binary Search Tree | DFS - Inorder | [LC#897](https://leetcode.com/problems/increasing-order-search-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/897-increasing-order-search-tree) |
+| 75 | Convert BST to Greater Tree | Binary Search Tree | DFS - Reverse Inorder | [LC#538](https://leetcode.com/problems/convert-bst-to-greater-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/538-convert-bst-to-greater-tree) |
+| 76 | Binary Search Tree to Greater Sum Tree | Binary Search Tree | DFS - Reverse Inorder | [LC#1038](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1038-binary-search-tree-to-greater-sum-tree) |
+| 77 | Binary Search Tree Iterator | Binary Search Tree | Iterator | [LC#173](https://leetcode.com/problems/binary-search-tree-iterator/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/173-binary-search-tree-iterator) |
+| | | **String** | | | |
+| 78 | Valid Anagram | String | Hash Map | [LC#242](https://leetcode.com/problems/valid-anagram/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/242-valid-anagram) |
+| 79 | First Unique Character in a String | String | Hash Map | [LC#387](https://leetcode.com/problems/first-unique-character-in-a-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/387-first-unique-character-in-a-string) |
+| 80 | Jewels and Stones | String | Hash Set | [LC#771](https://leetcode.com/problems/jewels-and-stones/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/771-jewels-and-stones) |
+| 81 | Add Strings | String | Math | [LC#415](https://leetcode.com/problems/add-strings/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/415-add-strings) |
+| 82 | Fizz Buzz | String | Simulation | [LC#412](https://leetcode.com/problems/fizz-buzz/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/412-fizz-buzz) |
+| 83 | Shuffle String | String | Simulation | [LC#1528](https://leetcode.com/problems/shuffle-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1528-shuffle-string) |
+| 84 | Final Value of Variable After Performing Operations | String | Simulation | [LC#2011](https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2011-final-value-of-variable-after-performing-operations) |
+| 85 | Backspace String Compare | String | Stack | [LC#844](https://leetcode.com/problems/backspace-string-compare/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/844-backspace-string-compare) |
+| 86 | Defanging an IP Address | String | String Manipulation | [LC#1108](https://leetcode.com/problems/defanging-an-ip-address/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1108-defanging-an-ip-address) |
+| 87 | Check If a Word Occurs As a Prefix of Any Word in a Sentence | String | String Matching | [LC#1455](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1455-check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence) |
+| 88 | Check If String Is a Prefix of Array | String | String Matching | [LC#1961](https://leetcode.com/problems/check-if-string-is-a-prefix-of-array/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1961-check-if-string-is-a-prefix-of-array) |
+| 89 | Counting Words With a Given Prefix | String | String Matching | [LC#2185](https://leetcode.com/problems/counting-words-with-a-given-prefix/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2185-counting-words-with-a-given-prefix) |
+| 90 | Count Prefixes of a Given String | String | String Matching | [LC#2255](https://leetcode.com/problems/count-prefixes-of-a-given-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2255-count-prefixes-of-a-given-string) |
+| 91 | Maximum Number of Words Found in Sentences | String | String Split | [LC#2114](https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2114-maximum-number-of-words-found-in-sentences) |
+| 92 | Reverse String | String | Two Pointers | [LC#344](https://leetcode.com/problems/reverse-string/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/344-reverse-string) |
+| 93 | Valid Palindrome II | String | Two Pointers | [LC#680](https://leetcode.com/problems/valid-palindrome-ii/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/680-valid-palindrome-ii) |
+| | | **Stack** | | | |
+| 94 | Baseball Game | Stack | Simulation | [LC#682](https://leetcode.com/problems/baseball-game/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/682-baseball-game) |
+| | | **Heap** | | | |
+| 95 | Last Stone Weight | Heap | Max Heap | [LC#1046](https://leetcode.com/problems/last-stone-weight/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1046-last-stone-weight) |
+| 96 | Kth Largest Element in a Stream | Heap | Min Heap | [LC#703](https://leetcode.com/problems/kth-largest-element-in-a-stream/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/703-kth-largest-element-in-a-stream) |
+| | | **Design** | | | |
+| 97 | Encode and Decode TinyURL | Design | Hash Map | [LC#535](https://leetcode.com/problems/encode-and-decode-tinyurl/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/535-encode-and-decode-tinyurl) |
+| 98 | Design HashMap | Design | Hash Map | [LC#706](https://leetcode.com/problems/design-hashmap/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/706-design-hashmap) |
+| 99 | Design Underground System | Design | Hash Map | [LC#1396](https://leetcode.com/problems/design-underground-system/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/1396-design-underground-system) |
+| 100 | Design HashSet | Design | Hash Set | [LC#705](https://leetcode.com/problems/design-hashset/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/705-design-hashset) |
+| 101 | Peeking Iterator | Design | Iterator | [LC#284](https://leetcode.com/problems/peeking-iterator/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/284-peeking-iterator) |
+| | | **Math** | | | |
+| 102 | Add Two Integers | Math | Addition | [LC#2235](https://leetcode.com/problems/add-two-integers/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2235-add-two-integers) |
+| 103 | Sqrt(x) | Math | Binary Search | [LC#69](https://leetcode.com/problems/sqrtx/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/69-sqrtx) |
+| 104 | Fibonacci Number | Math | Dynamic Programming | [LC#509](https://leetcode.com/problems/fibonacci-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/509-fibonacci-number) |
