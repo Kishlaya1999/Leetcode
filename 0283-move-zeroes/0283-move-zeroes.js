@@ -23,15 +23,19 @@ Time Complexity: O(n) - single pass through the array
 Space Complexity: O(1) - only uses two pointers, in-place modification
 */
 
+var swap = function(nums, i, j) {
+    let temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+};
+
 var moveZeroes = function(nums) {
     let p = 0;   // Pointer for the position of next non-zero element
-    for (let i = 0 ; i< nums.length; i++) {
-        if (nums[i] != 0) {
-          // Swap non-zero element with element at position p
-          let temp = nums[p];
-          nums[p] = nums[i];
-          nums[i] = temp;
-          p++;     // Move boundary forward
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            swap(nums, p, i);  // Swap non-zero element with element at position p
+            p++;               // Move boundary forward
         }
     }
 };
