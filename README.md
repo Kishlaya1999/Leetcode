@@ -117,3 +117,15 @@
 | 102 | Add Two Integers | Math | Addition | [LC#2235](https://leetcode.com/problems/add-two-integers/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/2235-add-two-integers) |
 | 103 | Sqrt(x) | Math | Binary Search | [LC#69](https://leetcode.com/problems/sqrtx/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/69-sqrtx) |
 | 104 | Fibonacci Number | Math | Dynamic Programming | [LC#509](https://leetcode.com/problems/fibonacci-number/description/) | [📝](https://github.com/Kishlaya1999/Leetcode/tree/main/509-fibonacci-number) |
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
+<!---LeetCode Topics End-->
