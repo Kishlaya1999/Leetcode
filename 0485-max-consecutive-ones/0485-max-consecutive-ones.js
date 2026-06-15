@@ -36,19 +36,19 @@ Time Complexity: O(n) - single pass through the array
 Space Complexity: O(1) - only uses two variables
 */
 
-var findMaxConsecutiveOnes = function(nums) {
-    let count = 0, maxConsecutive = 0;
-    for (let i = 0 ; i< nums.length; i++) {
-        if(nums[i] == 1) {
-          count++;
-          if (count > maxConsecutive) {
-            maxConsecutive = count;
-          }
-        } 
-        else {
-          count = 0;
-        } 
+var findMaxConsecutiveOnes = function (nums) {
+  let count = 0, maxConsecutive = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] == 1) {
+      count++;
     }
+    else {
+      count = 0;
+    }
+    if (count > maxConsecutive) {
+      maxConsecutive = count;
+    }
+  }
 
-    return maxConsecutive;
+  return maxConsecutive;
 };
