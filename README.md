@@ -123,10 +123,31 @@
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
 | [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/Kishlaya1999/Leetcode/tree/main/0485-max-consecutive-ones/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
 <!---LeetCode Topics End-->
