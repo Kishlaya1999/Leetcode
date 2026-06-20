@@ -3,69 +3,47 @@
  * @return {number}
  */
 
+
 /*
-Approach: Sorting and Gap Detection with Proper Boundary Handling
+Approach: Mathematical Sum Formula
 
 Key Idea:
-- Sort the array so consecutive numbers appear adjacent
-- Traverse the sorted array and find where the sequence breaks
-- The missing number is detected when nums[i] + 1 != nums[i+1]
-- Handle edge case where missing number is at the end (equals n)
+- The array should contain numbers from 0 to n (where n = array length)
+- Calculate the expected sum of all numbers from 0 to n using the formula: n * (n + 1) / 2
+- Calculate the actual sum of elements present in the array
+- The difference between expected sum and actual sum is the missing number
 
 Algorithm:
-1. Sort the array in ascending order
-2. Traverse the sorted array with proper bounds checking:
-   - Check if i + 1 < nums.length to avoid out-of-bounds access
-   - If current element + 1 doesn't equal next element, gap found
-   - Return nums[i] + 1 as the missing number
-3. If loop completes without finding gap, missing number is n (array length)
-
-Example: [0, 1]
-- Array is already sorted: [0, 1]
-- n = 2 (array length), so complete sequence should be [0, 1, 2]
-- i=0: Check i + 1 < nums.length → 1 < 2 ✓
-       nums[0]=0, nums[1]=1 → 0 + 1 = 1 ✓ (no gap, continue)
-- i=1: Check i + 1 < nums.length → 2 < 2 ✗ (boundary check fails, skip)
-- Loop ends, return nums.length = 2 ✓
+1. Calculate 'n' = length of the array
+2. Calculate 'actualSum' (expected sum) = n * (n + 1) / 2
+   - This is the sum formula for first n natural numbers (including 0)
+3. Calculate 'partialSum' by iterating through the array and summing all elements
+4. Return the difference: actualSum - partialSum (this is the missing number)
 
 Example: [3, 0, 1]
-- After sorting: [0, 1, 3]
-- i=0: Check 1 < 3 ✓
-       nums[0]=0, nums[1]=1 → 0 + 1 = 1 ✓ (continue)
-- i=1: Check 2 < 3 ✓
-       nums[1]=1, nums[2]=3 → 1 + 1 = 2 ≠ 3 ✗ (gap found)
-- Return 1 + 1 = 2 ✓
+- n = 3
+- actualSum = 3 * (3 + 1) / 2 = 3 * 4 / 2 = 6
+  (Expected: 0 + 1 + 2 + 3 = 6)
+- partialSum = 3 + 0 + 1 = 4
+- Missing number = 6 - 4 = 2
 
-Example: [1, 2, 3]
-- After sorting: [1, 2, 3]
-- i=0: Check 1 < 3 ✓
-       nums[0]=1, nums[1]=2 → 1 + 1 = 2 ✓ (continue)
-- i=1: Check 2 < 3 ✓
-       nums[1]=2, nums[2]=3 → 2 + 1 = 3 ✓ (continue)
-- i=2: Check 3 < 3 ✗ (boundary check fails, skip)
-- Loop ends, but missing number is 0 (not handled!)
-- Returns 3 (incorrect - should return 0)
+Example: [0, 1]
+- n = 2
+- actualSum = 2 * 3 / 2 = 3
+- partialSum = 0 + 1 = 1
+- Missing number = 3 - 1 = 2
 
-Note: Current implementation still has a bug - doesn't check if 0 is missing!
-Should add: if (nums[0] !== 0) return 0; before the loop
-
-Time Complexity: O(n log n) - dominated by sorting
-Space Complexity: O(1) or O(n) - depending on sorting algorithm
+Time Complexity: O(n) - single pass through the array to calculate partial sum
+Space Complexity: O(1) - only uses a few variables
 */
 
 var missingNumber = function(nums) {
-    nums.sort((a, b) => a - b);  // Sort array in ascending order
-    
-    // Check if 0 is missing (edge case)
-    if (nums[0] !== 0) return 0;
-    
-    for (let i = 0; i < nums.length - 1; i++) {
-        // Check bounds and if there's a gap between consecutive elements
-        if(nums[i] != nums[i+1] - 1) {
-          return nums[i] + 1;  // Found the missing number
-        }
+    let n = nums.length;
+    let actualSum = n * (n + 1) / 2;
+    let partialSum = 0
+    for (let i = 0 ; i < nums.length; i++) {
+        partialSum += nums[i];
     }
-    
-    // If no gap found, missing number is n (the last number)
-    return nums.length;
+
+    return actualSum - partialSum;
 };
