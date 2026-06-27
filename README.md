@@ -126,6 +126,7 @@
 | [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
 | [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/Kishlaya1999/Leetcode/tree/main/0485-max-consecutive-ones/) | Easy |
+| [0704-binary-search](https://github.com/Kishlaya1999/Leetcode/tree/main/0704-binary-search/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -142,6 +143,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0268-missing-number](https://github.com/Kishlaya1999/Leetcode/tree/main/0268-missing-number/) | Easy |
+| [0704-binary-search](https://github.com/Kishlaya1999/Leetcode/tree/main/0704-binary-search/) | Easy |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
