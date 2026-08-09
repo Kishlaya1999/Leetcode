@@ -13,130 +13,144 @@
  */
 
 /*
-Approach: Hash Set of List A Nodes
+Approach: Length Difference + Aligned Two-Pointer Traversal
 
 Intuition:
-- Two linked lists "intersect" when they share the SAME NODE in memory
-  (not just equal values — the actual same node object, from that point
-  the lists merge into one and share all subsequent nodes)
-- The challenge: we can only move forward in a linked list, so we can't
-  compare backwards from the tail
-- Simplest idea: remember every node we've seen in list A, then check
-  if any node in list B was already seen
-- If list B ever visits a node that's in our Set, that's the intersection point!
-- We check node REFERENCES (not values) since intersection means same
-  physical node in memory
+- If two lists intersect, they MUST share the same tail (from the
+  intersection node onward, they are literally the same chain)
+- The problem with comparing node by node from both heads: the lists
+  may have different lengths, so their "endings" are offset
+- Key insight: if we could START both pointers at the same distance
+  from the intersection, they would meet exactly at the intersection!
+- How? Find the length difference, advance the longer list's pointer
+  by that difference — now both pointers are equidistant from the end
+- From this aligned starting position, move both one step at a time
+  until they point to the same node (intersection) or both hit null
 
 Key Idea:
-- Pass 1: Traverse list A and store every node's reference in a Set
-- Pass 2: Traverse list B and check each node against the Set
-  * First node found in the Set = intersection node → return it
-  * If we reach null without a match → no intersection → return null
+- Compute lengths of both lists (lenA, lenB)
+- Calculate diff = |lenA - lenB|
+- Advance the pointer of the LONGER list by 'diff' steps
+  (this aligns both pointers so they're equidistant from the tail)
+- Move both pointers in sync until they meet (intersection) or
+  both reach null (no intersection)
 
 Algorithm:
-1. Initialize currA = headA, empty Set 'nodesInA'
-2. Pass 1 - Populate Set:
-   - Traverse list A, adding each node reference to nodesInA
-3. Initialize currB = headB
-4. Pass 2 - Find intersection:
-   - Traverse list B, checking each node against nodesInA
-   - If nodesInA.has(currB): return currB (intersection found!)
-   - Advance currB = currB.next
-5. Return null (no intersection)
+1. Pass 1: Count lenA (traverse list A) and lenB (traverse list B)
+2. Calculate diff = |lenA - lenB|
+3. Reset currA = headA, currB = headB
+4. Advance the pointer of the longer list by 'diff' steps
+5. Move both pointers forward in sync:
+   - If currA == currB (same node reference): return that node
+   - Advance both: currA = currA.next, currB = currB.next
+6. Return null if loop ends without intersection
 
-Example 1: Lists intersect at node [8]
+Example: Lists intersect at node [8]
 
-  List A: 4 → 1 → 8 → 4 → 5
-                   ↑
-  List B: 5 → 6 → 1 → 8 → 4 → 5
-                       (same node as above)
+  List A (length=5): [4] → [1] → [8] → [4] → [5]
+  List B (length=6): [5] → [6] → [1] → [8] → [4] → [5]
+                                         ↑ same physical nodes from here
 
-  Wait — intersection is at the node where they MERGE, meaning from
-  that node onward, both lists are literally the same chain:
+  Step 1 - Count lengths:
+    lenA = 5, lenB = 6, diff = 1
 
-  A: [4] → [1] ↘
-                 [8] → [4] → [5]
-  B: [5] → [6] → [1] ↗
+  Step 2 - Advance longer list (B) by diff=1:
+    currB = [6] (skip first node of B)
 
-  Pass 1 (build Set from A):
-    nodesInA = {[4(A)], [1(A)], [8], [4], [5]}
+  Now both pointers are equidistant from the tail:
+    currA: [4] → [1] → [8] → [4] → [5]
+    currB: [6] → [1] → [8] → [4] → [5]
+    (both have 5 nodes remaining to traverse)
 
-  Pass 2 (scan B):
-    currB=[5(B)]: nodesInA.has([5(B)])? No → advance
-    currB=[6(B)]: nodesInA.has([6(B)])? No → advance
-    currB=[1(B)]: nodesInA.has([1(B)])? No → advance
-    currB=[8]:    nodesInA.has([8])?    YES ✓ → return [8]
+  Step 3 - Move in sync:
+  currA=[4], currB=[6]: [4] != [6] → advance both
+  currA=[1], currB=[1]: [1(A)] != [1(B)] → advance both (different objects!)
+  currA=[8], currB=[8]: [8] == [8] ✓ → return node(8)
 
   Return node(8) ✓
 
-Example 2: No intersection
+Example: No intersection
 
-  List A: 2 → 6 → 4
-  List B: 1 → 5
+  List A (length=3): [2] → [6] → [4]
+  List B (length=2): [1] → [5]
 
-  Pass 1: nodesInA = {[2], [6], [4]}
-  Pass 2:
-    currB=[1]: not in Set → advance
-    currB=[5]: not in Set → advance
-    currB=null → loop ends
+  diff = 3 - 2 = 1
+  Advance currA by 1: currA = [6]
+
+  Sync traversal:
+    currA=[6], currB=[1]: [6] != [1] → advance
+    currA=[4], currB=[5]: [4] != [5] → advance
+    currA=null, currB=null → loop ends
   Return null ✓
 
-Example 3: Same value, different nodes (NOT intersection)
+Example: Equal length lists, intersection at first node
 
-  List A: [1(obj1)] → [2(obj2)]
-  List B: [1(obj3)] → [2(obj4)]
+  List A (length=3): [8] → [4] → [5]
+  List B (length=3): [8] → [4] → [5] (same nodes!)
+                      ↑ intersect at [8]
 
-  - nodesInA = {obj1, obj2}
-  - obj3 and obj4 are DIFFERENT objects even though values match
-  - nodesInA.has(obj3)? No
-  - nodesInA.has(obj4)? No
-  - Return null ✓ (correct — different node objects, no intersection)
+  diff = 0, neither pointer is advanced
+  Sync traversal:
+    currA=[8], currB=[8]: [8] == [8] ✓ → return node(8) immediately
 
-State table (Example 1, Pass 2):
-  Step | currB node | In nodesInA? | Action
-  -----|------------|--------------|------------------
-   1   |   [5(B)]   |     No       | advance currB
-   2   |   [6(B)]   |     No       | advance currB
-   3   |   [1(B)]   |     No       | advance currB
-   4   |    [8]     |    YES ✓     | return node(8)
+State table (main example):
+  Step | currA | currB | currA == currB?
+  -----|-------|-------|----------------
+   1   |  [4]  |  [6]  |      No
+   2   |  [1A] |  [1B] |      No  (same value, different objects!)
+   3   |  [8]  |  [8]  |     YES ✓ → return node(8)
 
-Time Complexity: O(m + n) - one pass through each list
-                  (m = length of list A, n = length of list B)
-Space Complexity: O(m) - Set stores all nodes from list A
+Time Complexity: O(m + n) - two passes to count + one aligned pass
+Space Complexity: O(1) - only pointer and counter variables used
 
-Optimized Alternative - Two Pointer Technique (O(1) Space):
-- Use two pointers, one for each list
-- When a pointer reaches the end of its list, redirect it to the
-  HEAD of the OTHER list
-- Both pointers will have traveled m+n total steps when they meet
-  at the intersection (or both reach null if no intersection)
-
-Comparison:
-  Approach              | Time      | Space | Notes
-  ----------------------|-----------|-------|---------------------------
-  Hash Set (this) ✓     | O(m + n)  | O(m)  | Intuitive, two passes
-  Two-pointer technique | O(m + n)  | O(1)  | Elegant, single traversal
+Comparison across all three approaches:
+  Approach                  | Time      | Space | Passes
+  --------------------------|-----------|-------|-------
+  Hash Set                  | O(m + n)  | O(m)  |   2
+  Length diff + align (this)| O(m + n)  | O(1)  |   3
+  Two-pointer redirect ✓    | O(m + n)  | O(1)  |   1  ← most elegant
 */
 
-var getIntersectionNode = function (headA, headB) {
+var getIntersectionNode = function(headA, headB) {
+    let lenA = 0, lenB = 0;  // Fix: use comma, not semicolon after lenA = 0
+    let currA = headA, currB = headB;
 
-  let currA = headA;
-  let nodesInA = new Set();  // Stores all node references from list A
-
-  // Pass 1: Populate Set with every node in list A
-  while (currA) {
-    nodesInA.add(currA);    // Store node reference (not value!)
-    currA = currA.next;
-  }
-
-  // Pass 2: Check each node in list B against the Set
-  let currB = headB;
-  while (currB) {
-    if (nodesInA.has(currB)) {
-      return currB;         // First match = intersection node
+    // Pass 1: Count length of list A
+    while(currA) {
+      lenA++;
+      currA = currA.next;
     }
-    currB = currB.next;
-  }
 
-  return null;  // No intersection found
+    // Pass 2: Count length of list B
+    while(currB) {
+      lenB++;
+      currB = currB.next;
+    }
+
+    let diff = lenA > lenB ? lenA - lenB : lenB - lenA;  // |lenA - lenB|
+
+    // Reset both pointers to their respective heads
+    currA = headA;
+    currB = headB;
+
+    // Advance the pointer of the longer list by 'diff' steps to align them
+    if(lenA > lenB) {
+      for(let i = 0; i < diff; i++) {
+        currA = currA.next;  // Skip first 'diff' nodes of longer list A
+      }
+    } else if(lenA < lenB) {
+      for(let i = 0; i < diff; i++) {
+        currB = currB.next;  // Skip first 'diff' nodes of longer list B
+      }
+    }
+
+    // Move both pointers in sync until they meet or both reach null
+    while(currA && currB) {
+      if(currA == currB) return currA;  // Same node reference = intersection!
+
+      currA = currA.next;
+      currB = currB.next;
+    }
+
+    return null;  // No intersection found
 };
