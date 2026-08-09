@@ -131,6 +131,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0141-linked-list-cycle](https://github.com/Kishlaya1999/Leetcode/tree/main/0141-linked-list-cycle/) | Easy |
+| [0234-palindrome-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0234-palindrome-linked-list/) | Easy |
 | [0283-move-zeroes](https://github.com/Kishlaya1999/Leetcode/tree/main/0283-move-zeroes/) | Easy |
 | [0876-middle-of-the-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0876-middle-of-the-linked-list/) | Easy |
 ## Hash Table
@@ -161,6 +162,7 @@
 | [0021-merge-two-sorted-lists](https://github.com/Kishlaya1999/Leetcode/tree/main/0021-merge-two-sorted-lists/) | Easy |
 | [0141-linked-list-cycle](https://github.com/Kishlaya1999/Leetcode/tree/main/0141-linked-list-cycle/) | Easy |
 | [0206-reverse-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0206-reverse-linked-list/) | Easy |
+| [0234-palindrome-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0234-palindrome-linked-list/) | Easy |
 | [0707-design-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0707-design-linked-list/) | Medium |
 | [0876-middle-of-the-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0876-middle-of-the-linked-list/) | Easy |
 ## Recursion
@@ -168,6 +170,7 @@
 | ------- | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/Kishlaya1999/Leetcode/tree/main/0021-merge-two-sorted-lists/) | Easy |
 | [0206-reverse-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0206-reverse-linked-list/) | Easy |
+| [0234-palindrome-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0234-palindrome-linked-list/) | Easy |
 ## Floyd's Cycle Finding Algorithm
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -176,4 +179,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0707-design-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0707-design-linked-list/) | Medium |
+## Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0234-palindrome-linked-list](https://github.com/Kishlaya1999/Leetcode/tree/main/0234-palindrome-linked-list/) | Easy |
 <!---LeetCode Topics End-->
