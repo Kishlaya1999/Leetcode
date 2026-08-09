@@ -12,104 +12,98 @@
  */
 
 /*
-Approach: Floyd's Cycle Detection (Tortoise and Hare)
+Approach: Hash Set of Visited Nodes
 
 Intuition:
-- A cycle exists when some node's 'next' pointer points back to a
-  previously visited node, creating an infinite loop
-- Naive approach: use a Set to store visited nodes — if we visit
-  a node we've seen before, there's a cycle (O(n) space)
-- Can we detect a cycle without extra space?
-- Key insight: imagine two runners on a circular track — if there's
-  a loop, the faster runner will eventually LAP the slower one and
-  they'll meet at the same point!
-- If there's NO loop, the fast runner simply reaches the end (null)
-  and we know there's no cycle
+- A cycle exists when traversal leads us back to a node we've already seen
+- The most direct way to detect "have I been here before?" is to simply
+  remember every node we visit
+- Use a Set to store node REFERENCES (not values — different nodes can
+  share the same value, but each node object is unique in memory)
+- If we ever encounter a node already in our Set, we've found a cycle
+- If we reach null, the list has a proper end — no cycle exists
 
 Key Idea:
-- Use two pointers: slow (1 step) and fast (2 steps)
-- If there's NO cycle: fast will reach null → return false
-- If there IS a cycle: fast will eventually "lap" slow and they
-  will point to the EXACT SAME NODE → return true
-- The check `slow == fast` compares node REFERENCES (same node in
-  memory), not values (different nodes can have the same value)
+- Traverse the list node by node, storing each node's reference in a Set
+- Before adding a node, check if it's already in the Set:
+  * If YES: we've revisited a node → cycle detected → return true
+  * If NO: add it to the Set and move forward
+- If curr reaches null: traversal completed without revisiting → return false
 
 Algorithm:
-1. Base case: if head is null or single node (no next), no cycle possible
-2. Initialize slow = head, fast = head
-3. While fast != null AND fast.next != null:
-   - Advance slow one step: slow = slow.next
-   - Advance fast two steps: fast = fast.next.next
-   - If slow == fast (same node reference): cycle detected! return true
-4. Loop exits naturally → fast reached null → no cycle → return false
+1. Base case: null list or single node with no next → no cycle possible
+2. Initialize empty Set 'seenNodes', curr = head
+3. While curr != null:
+   - If seenNodes already has curr (same node reference): return true
+   - Else: add curr to seenNodes, advance curr = curr.next
+4. Loop exits → curr == null → no cycle → return false
 
 Example 1: 3 → 2 → 0 → -4 → (back to 2) [HAS CYCLE]
 
 List structure:
   [3] → [2] → [0] → [-4]
-         ↑              |
-         └──────────────┘
+         ↑               |
+         └───────────────┘
 
-  Step | slow | fast | slow == fast?
-  -----|------|------|-------------
-  init |  3   |  3   |      —
-   1   |  2   |  0   |     No
-   2   |  0   | -4   |     No
-   3   | -4   |  0   |     No
-   4   |  2   | -4   |     No
-   5   |  0   |  2   |     No
-   6   | -4   | -4   |    YES ✓ → return true
+  Step | curr  | seenNodes has curr? | Action
+  -----|-------|---------------------|---------------------------
+   1   |  [3]  |     No              | add [3], curr → [2]
+   2   |  [2]  |     No              | add [2], curr → [0]
+   3   |  [0]  |     No              | add [0], curr → [-4]
+   4   | [-4]  |     No              | add [-4], curr → [2]
+   5   |  [2]  |    YES ✓            | return true (cycle found!)
 
-Example 2: 1 → 2 → 3 → 4 → null [NO CYCLE]
+Example 2: 1 → 2 → 3 → null [NO CYCLE]
 
-  Step | slow | fast | fast.next | Condition
-  -----|------|------|-----------|------------------
-  init |  1   |  1   |     2     | both at head
-   1   |  2   |  3   |     4     | continue
-   2   |  3   |  null|     —     | fast==null → loop ends
-  Return false ✓
+  Step | curr  | seenNodes has curr? | Action
+  -----|-------|---------------------|---------------------------
+   1   |  [1]  |     No              | add [1], curr → [2]
+   2   |  [2]  |     No              | add [2], curr → [3]
+   3   |  [3]  |     No              | add [3], curr → null
+   4   |  null |     —               | loop exits → return false ✓
 
-Example 3: head = null (edge case)
-- head == null → return false immediately ✓
+Example 3: head = null
+  - head == null → return false immediately ✓
 
-Example 4: head = [1] → null (single node, edge case)
-- head.next == null → return false immediately ✓
+Example 4: head = [1] → null (single node)
+  - head.next == null → return false immediately ✓
 
-Why slow and fast will ALWAYS meet (math behind it):
-- Let the cycle length be C and the distance to cycle entry be D
-- When slow enters the cycle, fast is already D steps ahead inside it
-- Relative speed of fast w.r.t. slow = 2 - 1 = 1 step per iteration
-- So fast "gains" 1 step on slow per iteration
-- Since fast gains on slow by 1 step each time within a cycle of
-  length C, they MUST meet within C iterations of slow entering the cycle
+Why node REFERENCES and not values matter:
+  Consider: [1] → [1] → [1] (no cycle, but all values are 1)
+  - Storing values in the Set would incorrectly detect a "cycle" at step 2
+  - Storing node references (the actual objects) correctly identifies
+    these as three distinct nodes → no cycle detected ✓
 
-Time Complexity: O(n) - in the worst case, fast pointer traverses
-                  the entire list before catching slow in the cycle
-Space Complexity: O(1) - only two pointer variables, no extra data structure
+Time Complexity: O(n) - visits each node at most once before detecting
+                  a cycle or reaching null
+Space Complexity: O(n) - Set stores up to n node references in the
+                   worst case (no cycle, entire list stored)
 
-Comparison with Hash Set Approach:
+Comparison with Floyd's Cycle Detection:
   Approach              | Time   | Space  | Notes
-  ----------------------|--------|--------|---------------------------
-  Hash Set (visited)    | O(n)   | O(n)   | Store all visited nodes
-  Floyd's Detection ✓   | O(n)   | O(1)   | No extra storage needed
+  ----------------------|--------|--------|-----------------------------
+  Hash Set (this) ✓     | O(n)   | O(n)   | Intuitive, easy to understand
+  Floyd's Tortoise/Hare | O(n)   | O(1)   | No extra space, two pointers
 */
 
 var hasCycle = function(head) {
-    // Base case: null list or single node cannot have a cycle
-    if(head == null || head.next == null) {
-      return false;
-    }
 
-    let slow = head, fast = head;  // Both start at head
-
-    while(fast != null && fast.next != null) {
-      slow = slow.next;        // Tortoise: 1 step
-      fast = fast.next.next;   // Hare: 2 steps
-
-      // Same node reference means they've met inside the cycle
-      if(slow == fast) return true;
-    }
-
-    // fast reached null → list has an end → no cycle
+  // Base case: null list or single node cannot have a cycle
+  if(head == null || head.next == null) {
     return false;
+  }
+
+  let seenNodes = new Set();  // Stores references to visited nodes
+  let curr = head;
+  
+  while(curr) {
+    // If we've seen this exact node before, we've found a cycle
+    if(seenNodes.has(curr)) return true;
+
+    seenNodes.add(curr);  // Mark current node as visited
+    curr = curr.next;     // Move to next node
+  }
+
+  // curr reached null → list has a proper end → no cycle
+  return false;
 };
