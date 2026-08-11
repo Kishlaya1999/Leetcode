@@ -27,8 +27,8 @@ var removeNthFromEnd = function(head, n) {
     for(let i = 0; i < positionFromStart - 1; i++) {
       current = current.next;
     }
-    if(current.next)
-      current.next = current.next.next;
+     
+    current.next = current.next.next;
 
     return head;
 
