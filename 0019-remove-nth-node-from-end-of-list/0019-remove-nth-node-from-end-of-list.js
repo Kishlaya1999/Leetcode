@@ -12,84 +12,105 @@
  */
 
 /*
-Approach: Two-Pass (Length Calculation + Targeted Deletion)
+Approach: Two-Pass with Sentinel Node
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+What is a Sentinel Node and When is it Used?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A sentinel (dummy) node is a fake placeholder node prepended before
+the actual head of the list. It holds no meaningful value — its ONLY
+purpose is to eliminate special cases in pointer manipulation.
+
+Why it's needed:
+- Deleting or inserting a node requires access to its PREDECESSOR
+- The head node has NO predecessor → requires a special case without sentinel
+- With a sentinel, even the head has a predecessor (the sentinel itself)
+  → ALL nodes can be handled with the SAME uniform logic
+
+Classic situations where sentinel is used:
+  1. DELETING the head node:
+     Without sentinel: if (positionFromStart == 0) return head.next; ← special case
+     With sentinel:    prev.next = prev.next.next;  ← works for ALL positions!
+
+  2. BUILDING a new list (e.g., merge two lists, remove elements):
+     Without sentinel: track whether head has been set yet → if/else on first node
+     With sentinel:    always append to sentinel.next → uniform for all nodes
+
+  3. INSERTING at position 0:
+     Without sentinel: newNode.next = head; head = newNode; ← different logic
+     With sentinel:    prev.next = newNode; ← same as any other insertion
+
+The pattern is always:
+  sentinel.next = head          ← attach real list after sentinel
+  // ... manipulate using prev/curr starting from sentinel ...
+  return sentinel.next          ← skip sentinel, return actual head
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Intuition:
-- We need to remove the nth node FROM THE END, but we can only traverse
-  forward in a linked list — we don't know where the end is until we reach it
-- Simplest idea: if we know the total length, we can convert "nth from end"
-  into "positionFromStart = length - n" (0-indexed from head)
-- This requires two passes: one to measure, one to reach and delete
-- Edge case: if positionFromStart == 0, we're deleting the HEAD itself
-  → just return head.next (no predecessor to rewire from)
-- For all other positions: traverse to the node JUST BEFORE the target
-  and rewire its next pointer to skip the target
+- We need to delete the nth node from the end
+- Two-pass strategy: count length first, then convert to position from start
+- Sentinel lets us handle head deletion without any special case
 
 Key Idea:
-- Pass 1: Count total length of the list
-- Convert: positionFromStart = len - n
-  (how many nodes to skip from head to reach the node to delete)
-- If positionFromStart == 0: target is the head → return head.next
-- Pass 2: Traverse to positionFromStart - 1 (node before target)
-- Delete: current.next = current.next.next
+- Sentinel sits before head; 'prev' starts at sentinel
+- Traverse (len - n) steps from sentinel to land exactly on the
+  PREDECESSOR of the target node
+- This naturally handles target=head (0 steps from sentinel → prev=sentinel)
+- Rewire: prev.next = prev.next.next (skip the target)
 
 Algorithm:
-1. Pass 1 - Count length:
-   - Traverse entire list, increment len each step
-2. Calculate positionFromStart = len - n
-3. Edge case: if positionFromStart == 0, return head.next (remove head)
-4. Pass 2 - Reach predecessor:
-   - Traverse positionFromStart - 1 steps from head
-5. Delete: current.next = current.next.next
-6. Return head
+1. Create sentinel, sentinel.next = head
+2. Pass 1: Count total length (len) of the list
+3. Start prev = sentinel
+4. Traverse len - n steps to reach predecessor of target
+5. Delete: prev.next = prev.next.next
+6. Return sentinel.next
 
 Example 1: head = [1 → 2 → 3 → 4 → 5], n = 2
 
 Pass 1: len = 5
-positionFromStart = 5 - 2 = 3 (0-indexed: node at position 3 = value 4)
+Steps to predecessor = len - n = 5 - 2 = 3
 
-  Index:   0    1    2    3    4
-  List:  [1] → [2] → [3] → [4] → [5]
-                              ↑ delete this (3rd from start, 2nd from end)
+  sentinel(0) → [1] → [2] → [3] → [4] → [5]
+  ↑prev
 
-positionFromStart = 3, not 0 → no head removal
+  i=0: prev = [1]
+  i=1: prev = [2]
+  i=2: prev = [3]
+  prev = [3] ← predecessor of target [4]
 
-Pass 2: Traverse positionFromStart - 1 = 2 steps
-  start: current=[1]
-  i=0: current=[2]
-  i=1: current=[3]
-  current=[3] is the predecessor of target [4]
+  Delete: [3].next = [4].next = [5]
 
-Delete: current.next = current.next.next
-  [3].next = [4].next = [5]
+  sentinel(0) → [1] → [2] → [3] → [5]
+  Return sentinel.next = [1] → [2] → [3] → [5] ✓
 
-Result: [1] → [2] → [3] → [5] ✓
-
-Example 2: head = [1 → 2], n = 2 (remove head)
+Example 2: head = [1 → 2], n = 2 (delete head — sentinel handles this!)
 
 Pass 1: len = 2
-positionFromStart = 2 - 2 = 0 → remove head!
-Return head.next = [2] ✓
+Steps to predecessor = len - n = 2 - 2 = 0
 
-Example 3: head = [1], n = 1 (single node, remove head)
+  sentinel(0) → [1] → [2]
+  ↑prev (stays at sentinel — 0 steps taken!)
 
-Pass 1: len = 1
-positionFromStart = 1 - 1 = 0 → remove head!
-Return head.next = null ✓
+  Delete: sentinel.next = [1].next = [2]
 
-Example 4: head = [1 → 2 → 3], n = 1 (remove last node)
+  sentinel(0) → [2]
+  Return sentinel.next = [2] ✓
+  (No special case needed — sentinel was the predecessor of head!)
+
+Example 3: head = [1 → 2 → 3], n = 1 (delete tail)
 
 Pass 1: len = 3
-positionFromStart = 3 - 1 = 2
+Steps = len - n = 3 - 1 = 2
 
-Pass 2: Traverse positionFromStart - 1 = 1 step
-  start: current=[1]
-  i=0: current=[2]
-  current=[2] is predecessor of target [3]
+  sentinel(0) → [1] → [2] → [3]
+  i=0: prev=[1]
+  i=1: prev=[2]
+  prev=[2] ← predecessor of [3]
 
-Delete: [2].next = [3].next = null
-
-Result: [1] → [2] ✓
+  Delete: [2].next = [3].next = null
+  Return [1] → [2] ✓
 
 State table (Example 1):
   Pass 1:
@@ -101,68 +122,51 @@ State table (Example 1):
      4   |   [5]   |  4
      5   |   null  |  5
 
-  positionFromStart = 5 - 2 = 3
+  Pass 2 (traverse len-n = 3 steps from sentinel):
+    i=0: prev=sentinel → [1]
+    i=1: prev=[1] → [2]
+    i=2: prev=[2] → [3]
+    prev=[3], delete [4]: [3].next=[5]
 
-  Pass 2 (traverse to index 2 = positionFromStart - 1):
-    i=0: current=[1] → [2]
-    i=1: current=[2] → [3]
-    current=[3], delete [3].next=[4]: [3].next=[5]
+Sentinel vs No Sentinel (side by side):
+  Without sentinel (previous solution):
+    let positionFromStart = len - n;
+    if(positionFromStart == 0) return head.next;  ← SPECIAL CASE for head
+    current = head;
+    for(let i = 0; i < positionFromStart - 1; i++) current = current.next;
+    current.next = current.next.next;
 
-Time Complexity: O(n) - two passes, each O(n)
-Space Complexity: O(1) - only pointer and counter variables
+  With sentinel (this solution):
+    let prev = sentinel;
+    for(let i = 0; i < len - n; i++) prev = prev.next;  ← UNIFORM, no special case
+    prev.next = prev.next.next;
 
-Optimized Alternative - Single Pass with Two Pointers:
-- Use fast and slow pointers, gap of n between them
-- When fast reaches end, slow is exactly at the predecessor of target
-- Achieves same result in ONE pass
-
-var removeNthFromEnd = function(head, n) {
-    let sentinel = new ListNode(0, head);
-    let fast = sentinel, slow = sentinel;
-    
-    // Move fast n+1 steps ahead (so slow lands on predecessor)
-    for (let i = 0; i <= n; i++) fast = fast.next;
-    
-    // Move both until fast hits null
-    while (fast) {
-        fast = fast.next;
-        slow = slow.next;
-    }
-    
-    slow.next = slow.next.next;  // Delete target
-    return sentinel.next;
-};
-
-Comparison:
-  Approach                | Time   | Space | Passes
-  ------------------------|--------|-------|-------
-  Two-pass (this)         | O(n)   | O(1)  |   2
-  One-pass two-pointer ✓  | O(n)   | O(1)  |   1   ← fewer iterations
+Time Complexity: O(n) - two linear passes through the list
+Space Complexity: O(1) - only sentinel, prev, current pointer variables
 */
 
 var removeNthFromEnd = function(head, n) {
-    // Pass 1: Count total length of the list
-    let len = 0;
-    let current = head;
+    let sentinel = new ListNode();  // Dummy predecessor for uniform deletion
+    sentinel.next = head;
+
+    // Pass 1: Count total length
+    let current = head, len = 0;
     while(current) {
       current = current.next;
       len++;
     }
 
-    // Convert "nth from end" to "position from start" (0-indexed)
-    let positionFromStart = len - n;
+    // Start prev at sentinel (it acts as predecessor for all positions,
+    // including position 0 which is the head itself)
+    let prev = sentinel;
 
-    // Edge case: target is the head node itself
-    if(positionFromStart == 0) return head.next;
-
-    // Pass 2: Traverse to the node just BEFORE the target
-    current = head;
-    for(let i = 0; i < positionFromStart - 1; i++) {
-      current = current.next;
+    // Traverse len-n steps to land on the predecessor of the target node
+    for (let i = 0; i < len - n; i++) {
+      prev = prev.next;
     }
-    
-    // Delete: skip over the target node
-    current.next = current.next.next;
 
-    return head;
+    // Delete target: skip over prev.next (works for ALL positions including head)
+    prev.next = prev.next.next;
+
+    return sentinel.next;  // Skip sentinel, return actual head
 };
