@@ -12,161 +12,159 @@
  */
 
 /*
-Approach: Two-Pass with Sentinel Node
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-What is a Sentinel Node and When is it Used?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-A sentinel (dummy) node is a fake placeholder node prepended before
-the actual head of the list. It holds no meaningful value — its ONLY
-purpose is to eliminate special cases in pointer manipulation.
-
-Why it's needed:
-- Deleting or inserting a node requires access to its PREDECESSOR
-- The head node has NO predecessor → requires a special case without sentinel
-- With a sentinel, even the head has a predecessor (the sentinel itself)
-  → ALL nodes can be handled with the SAME uniform logic
-
-Classic situations where sentinel is used:
-  1. DELETING the head node:
-     Without sentinel: if (positionFromStart == 0) return head.next; ← special case
-     With sentinel:    prev.next = prev.next.next;  ← works for ALL positions!
-
-  2. BUILDING a new list (e.g., merge two lists, remove elements):
-     Without sentinel: track whether head has been set yet → if/else on first node
-     With sentinel:    always append to sentinel.next → uniform for all nodes
-
-  3. INSERTING at position 0:
-     Without sentinel: newNode.next = head; head = newNode; ← different logic
-     With sentinel:    prev.next = newNode; ← same as any other insertion
-
-The pattern is always:
-  sentinel.next = head          ← attach real list after sentinel
-  // ... manipulate using prev/curr starting from sentinel ...
-  return sentinel.next          ← skip sentinel, return actual head
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Approach: Single Pass with Two-Pointer Gap Technique + Sentinel
 
 Intuition:
-- We need to delete the nth node from the end
-- Two-pass strategy: count length first, then convert to position from start
-- Sentinel lets us handle head deletion without any special case
+- Previous approach needed TWO passes: one to count length, one to delete
+- Can we find the predecessor of the target node in just ONE pass?
+- Key insight: if we maintain two pointers exactly n steps apart,
+  when the FRONT pointer reaches the last node, the BACK pointer
+  is exactly at the PREDECESSOR of the nth node from the end!
+- Sentinel gives us a clean starting point so the back pointer
+  naturally handles head deletion without any special case
 
 Key Idea:
-- Sentinel sits before head; 'prev' starts at sentinel
-- Traverse (len - n) steps from sentinel to land exactly on the
-  PREDECESSOR of the target node
-- This naturally handles target=head (0 steps from sentinel → prev=sentinel)
-- Rewire: prev.next = prev.next.next (skip the target)
+- Both pointers start at sentinel
+- Advance 'first' pointer n steps ahead (creates n-node gap)
+- Move BOTH pointers forward until first.next == null
+  (first is at the last node, second is at the predecessor of target)
+- Delete: second.next = second.next.next
+
+Why the gap works:
+- After advancing first by n steps, first is n nodes ahead of second
+- When first reaches the last node (first.next == null), second is
+  exactly n nodes behind the last node
+- That means second.next is the nth node from the end — the target!
+- So second is the predecessor we need for deletion
 
 Algorithm:
 1. Create sentinel, sentinel.next = head
-2. Pass 1: Count total length (len) of the list
-3. Start prev = sentinel
-4. Traverse len - n steps to reach predecessor of target
-5. Delete: prev.next = prev.next.next
-6. Return sentinel.next
+2. Initialize first = sentinel
+3. Advance first exactly n steps forward
+4. Initialize second = sentinel
+5. Move both first and second forward until first.next == null
+6. Delete: second.next = second.next.next
+7. Return sentinel.next
 
 Example 1: head = [1 → 2 → 3 → 4 → 5], n = 2
 
-Pass 1: len = 5
-Steps to predecessor = len - n = 5 - 2 = 3
+Setup: sentinel(0) → [1] → [2] → [3] → [4] → [5]
+       first = sentinel, second = sentinel
+
+Step 1 - Advance first by n=2 steps:
+  i=0: first = [1]
+  i=1: first = [2]
 
   sentinel(0) → [1] → [2] → [3] → [4] → [5]
-  ↑prev
+  ↑second              ↑first
+  (gap of 2 nodes between second and first)
 
-  i=0: prev = [1]
-  i=1: prev = [2]
-  i=2: prev = [3]
-  prev = [3] ← predecessor of target [4]
+Step 2 - Move both until first.next == null:
 
-  Delete: [3].next = [4].next = [5]
+  Iteration 1: first.next=[3] ✓
+    first = [3], second = [1]
+    sentinel(0) → [1] → [2] → [3] → [4] → [5]
+                   ↑second       ↑first
 
-  sentinel(0) → [1] → [2] → [3] → [5]
+  Iteration 2: first.next=[4] ✓
+    first = [4], second = [2]
+    sentinel(0) → [1] → [2] → [3] → [4] → [5]
+                          ↑second       ↑first
+
+  Iteration 3: first.next=[5] ✓
+    first = [5], second = [3]
+    sentinel(0) → [1] → [2] → [3] → [4] → [5]
+                                ↑second       ↑first
+
+  Iteration 4: first.next=null ✗ → loop ends
+  second = [3] ← predecessor of target [4] (2nd from end) ✓
+
+Step 3 - Delete:
+  second.next = second.next.next → [3].next = [5]
+  Result: sentinel(0) → [1] → [2] → [3] → [5]
   Return sentinel.next = [1] → [2] → [3] → [5] ✓
 
 Example 2: head = [1 → 2], n = 2 (delete head — sentinel handles this!)
 
-Pass 1: len = 2
-Steps to predecessor = len - n = 2 - 2 = 0
+Advance first by n=2:
+  i=0: first = [1]
+  i=1: first = [2]
 
   sentinel(0) → [1] → [2]
-  ↑prev (stays at sentinel — 0 steps taken!)
+  ↑second              ↑first
 
-  Delete: sentinel.next = [1].next = [2]
+Move both until first.next == null:
+  first.next = null → loop never executes!
+  second = sentinel (never moved)
 
-  sentinel(0) → [2]
-  Return sentinel.next = [2] ✓
-  (No special case needed — sentinel was the predecessor of head!)
+Delete: sentinel.next = [1].next = [2]
+Return sentinel.next = [2] ✓
+(Sentinel cleanly handled head deletion — second stayed at sentinel!)
 
 Example 3: head = [1 → 2 → 3], n = 1 (delete tail)
 
-Pass 1: len = 3
-Steps = len - n = 3 - 1 = 2
+Advance first by n=1:
+  i=0: first = [1]
 
   sentinel(0) → [1] → [2] → [3]
-  i=0: prev=[1]
-  i=1: prev=[2]
-  prev=[2] ← predecessor of [3]
+  ↑second        ↑first
 
-  Delete: [2].next = [3].next = null
-  Return [1] → [2] ✓
+Move both until first.next == null:
+  Iter 1: first=[2], second=[1]
+  Iter 2: first=[3], second=[2]
+  first.next=null → stop
+
+Delete: [2].next = [3].next = null
+Return [1] → [2] ✓
 
 State table (Example 1):
-  Pass 1:
-    Step | current | len
-    -----|---------|----
-     1   |   [2]   |  1
-     2   |   [3]   |  2
-     3   |   [4]   |  3
-     4   |   [5]   |  4
-     5   |   null  |  5
+  Phase 1 - Advance first by n=2:
+    i  | first
+    ---|-------
+    0  |  [1]
+    1  |  [2]
 
-  Pass 2 (traverse len-n = 3 steps from sentinel):
-    i=0: prev=sentinel → [1]
-    i=1: prev=[1] → [2]
-    i=2: prev=[2] → [3]
-    prev=[3], delete [4]: [3].next=[5]
+  Phase 2 - Move both until first.next==null:
+    Iter | first | second | first.next
+    -----|-------|--------|----------
+     1   |  [3]  |  [1]   |   [4]
+     2   |  [4]  |  [2]   |   [5]
+     3   |  [5]  |  [3]   |   null  → stop
 
-Sentinel vs No Sentinel (side by side):
-  Without sentinel (previous solution):
-    let positionFromStart = len - n;
-    if(positionFromStart == 0) return head.next;  ← SPECIAL CASE for head
-    current = head;
-    for(let i = 0; i < positionFromStart - 1; i++) current = current.next;
-    current.next = current.next.next;
+  second=[3] is predecessor of target [4] → delete [4]
 
-  With sentinel (this solution):
-    let prev = sentinel;
-    for(let i = 0; i < len - n; i++) prev = prev.next;  ← UNIFORM, no special case
-    prev.next = prev.next.next;
+Comparison across all three removeNthFromEnd approaches:
+  Approach                       | Time   | Space | Passes
+  -------------------------------|--------|-------|-------
+  Two-pass no sentinel           | O(n)   | O(1)  |   2 (+ special head case)
+  Two-pass with sentinel         | O(n)   | O(1)  |   2 (no special case)
+  Single-pass two-pointer (this)✓| O(n)   | O(1)  |   1 (no special case)
 
-Time Complexity: O(n) - two linear passes through the list
-Space Complexity: O(1) - only sentinel, prev, current pointer variables
+Time Complexity: O(n) - first traverses up to n steps + both traverse rest
+Space Complexity: O(1) - only sentinel and two pointer variables
 */
 
 var removeNthFromEnd = function(head, n) {
-    let sentinel = new ListNode();  // Dummy predecessor for uniform deletion
+    let sentinel = new ListNode();  // Dummy node to eliminate head special case
     sentinel.next = head;
 
-    // Pass 1: Count total length
-    let current = head, len = 0;
-    while(current) {
-      current = current.next;
-      len++;
+    // Step 1: Advance first pointer n steps ahead of sentinel
+    let first = sentinel;
+    for (let i = 0; i < n; i++) {
+      first = first.next;
     }
+    // Gap of n nodes now exists between second(sentinel) and first
 
-    // Start prev at sentinel (it acts as predecessor for all positions,
-    // including position 0 which is the head itself)
-    let prev = sentinel;
-
-    // Traverse len-n steps to land on the predecessor of the target node
-    for (let i = 0; i < len - n; i++) {
-      prev = prev.next;
+    // Step 2: Move both pointers until first reaches the last node
+    let second = sentinel;
+    while(first.next) {       // Stop when first.next is null (first is at last node)
+      first = first.next;     // first advances toward end
+      second = second.next;   // second follows, maintaining n-node gap
     }
+    // second is now at the predecessor of the nth node from the end
 
-    // Delete target: skip over prev.next (works for ALL positions including head)
-    prev.next = prev.next.next;
+    // Step 3: Delete the nth node from the end
+    second.next = second.next.next;
 
     return sentinel.next;  // Skip sentinel, return actual head
 };
